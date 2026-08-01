@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master The Anaconda Strangle — John Danaher</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .player-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #111;
+            padding-bottom: 16px;
+        }
+        video {
+            width: 100%;
+            max-height: 65vh;
+            background: #000;
+            border-radius: 8px;
+        }
+        .now-playing {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        .now-playing strong {
+            color: #fff;
+        }
+        .part {
+            margin-bottom: 12px;
+        }
+        .part-header {
+            background: #1a1a2e;
+            border: 1px solid #2a2a4a;
+            border-radius: 6px;
+            padding: 12px 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .part-header:hover {
+            background: #222244;
+        }
+        .part-header h2 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .part-header .count {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        .part-header .arrow {
+            transition: transform 0.2s;
+            color: #666;
+        }
+        .part.collapsed .arrow {
+            transform: rotate(-90deg);
+        }
+        .part.collapsed .chapters {
+            display: none;
+        }
+        .chapters {
+            padding: 4px 0 4px 0;
+        }
+        .chapter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px 10px 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.15s;
+        }
+        .chapter:hover {
+            background: #1a1a2e;
+        }
+        .chapter.active {
+            background: #1a2a4a;
+            border-left: 3px solid #4488ff;
+            padding-left: 21px;
+        }
+        .chapter .num {
+            font-size: 0.75rem;
+            color: #666;
+            min-width: 28px;
+        }
+        .chapter .title {
+            flex: 1;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+        .chapter .duration {
+            font-size: 0.7rem;
+            color: #666;
+            font-family: monospace;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="player-wrapper">
+            <h1>Master The Anaconda Strangle — John Danaher</h1>
+            <video id="player" controls preload="metadata">
+                <source id="video-source" src="" type="video/mp4">
+            </video>
+            <div class="now-playing" id="now-playing">Click a chapter to start playing</div>
+        </div>
+
+        <div id="playlist"></div>
+    </div>
+
+    <script>
+        const course = [
+            {
+                title: "Part 1",
+                chapters: [
+                    { file: "7290895368290-01-01- Intro.mp4", title: "Intro", duration: "3:37" },
+                    { file: "7290895368290-01-02- The Precursor To The Anaconda_ The Front Headlock Strangle.mp4", title: "The Precursor To The Anaconda: The Front Headlock Strangle", duration: "9:43" },
+                    { file: "7290895368290-01-03- The Olympic Roll From Front Headlock.mp4", title: "The Olympic Roll From Front Headlock", duration: "3:32" },
+                    { file: "7290895368290-01-04- Reverse Olympic Roll From Front Headlock.mp4", title: "Reverse Olympic Roll From Front Headlock", duration: "5:14" },
+                ]
+            },
+            {
+                title: "Part 2",
+                chapters: [
+                    { file: "7290895368290-02-01- Building An Unstoppable Anaconda Strangle  The Two Central Problems Of The Anaconda Strangle And Their Solution.mp4", title: "Building An Unstoppable Anaconda Strangle: The Two Central Problems And Their Solution", duration: "4:26" },
+                    { file: "7290895368290-02-02- The Single Most Important Position For The Anaconda Student To Master_ The T Position.mp4", title: "The Single Most Important Position For The Anaconda Student To Master: The T Position", duration: "8:02" },
+                    { file: "7290895368290-02-03- Using Your Legs In T Position To Maximize Power.mp4", title: "Using Your Legs In T Position To Maximize Power", duration: "10:37" },
+                    { file: "7290895368290-02-04- The Two Main Variations Of Anaconda Strangles.mp4", title: "The Two Main Variations Of Anaconda Strangles", duration: "2:26" },
+                    { file: "7290895368290-02-05- The Problem With Hand Exposure And Its Solution.mp4", title: "The Problem With Hand Exposure And Its Solution", duration: "6:38" },
+                    { file: "7290895368290-02-06- Summary Of The Main Points To The T Position.mp4", title: "Summary Of The Main Points To The T Position", duration: "13:33" },
+                ]
+            },
+            {
+                title: "Part 3",
+                chapters: [
+                    { file: "7290895368290-03-01- Getting To The T Position From Anywhere And Everywhere  Getting To T Position From Turtle Position  Outside Roll Through_ My Approach To Outside Roll Through Anaconda.mp4", title: "Getting To The T Position From Anywhere And Everywhere: Outside Roll Through", duration: "9:44" },
+                    { file: "7290895368290-03-02- 2 Step Method Using Olympic Roll.mp4", title: "2 Step Method Using Olympic Roll", duration: "3:29" },
+                    { file: "7290895368290-03-03- Inside Roll Through  Standard Method.mp4", title: "Inside Roll Through: Standard Method", duration: "4:59" },
+                    { file: "7290895368290-03-04- Step Over Method.mp4", title: "Step Over Method", duration: "2:45" },
+                    { file: "7290895368290-03-05- Leg Hook Method.mp4", title: "Leg Hook Method", duration: "2:33" },
+                    { file: "7290895368290-03-06- Summary Of The Two Most Important Methods Of Getting To T Position.mp4", title: "Summary Of The Two Most Important Methods Of Getting To T Position", duration: "4:13" },
+                ]
+            },
+            {
+                title: "Part 4",
+                chapters: [
+                    { file: "7290895368290-04-01- Takedown Defense To Anaconda  The Most Important Element Of Anaconda Vs Takedown_ Get The Opponent's Hands Off Your Leg And On To The Floor.mp4", title: "Takedown Defense To Anaconda: Get The Opponent's Hands Off Your Leg And On To The Floor", duration: "2:18" },
+                    { file: "7290895368290-04-02- Downblock To Anaconda.mp4", title: "Downblock To Anaconda", duration: "2:46" },
+                    { file: "7290895368290-04-03- Single Leg Into Anaconda.mp4", title: "Single Leg Into Anaconda", duration: "5:36" },
+                    { file: "7290895368290-04-04- Double Leg Into Anaconda.mp4", title: "Double Leg Into Anaconda", duration: "4:23" },
+                    { file: "7290895368290-04-05- Lock Double Leg Into Anaconda.mp4", title: "Lock Double Leg Into Anaconda", duration: "5:04" },
+                    { file: "7290895368290-04-06- Anaconda Entry On A Standing Opponent  Sit Back Method.mp4", title: "Anaconda Entry On A Standing Opponent: Sit Back Method", duration: "7:10" },
+                    { file: "7290895368290-04-07- Uke Waza To Anaconda.mp4", title: "Uke Waza To Anaconda", duration: "8:09" },
+                ]
+            },
+            {
+                title: "Part 5",
+                chapters: [
+                    { file: "7290895368290-05-01- Guard Passing Into Anaconda  Understanding The Inverted North South Position.mp4", title: "Guard Passing Into Anaconda: Understanding The Inverted North South Position", duration: "7:23" },
+                    { file: "7290895368290-05-02- Anaconda Vs Seated Opponent.mp4", title: "Anaconda Vs Seated Opponent", duration: "6:12" },
+                    { file: "7290895368290-05-03- Entry To Anaconda Against A Supine Opponent.mp4", title: "Entry To Anaconda Against A Supine Opponent", duration: "3:59" },
+                    { file: "7290895368290-05-04- Half Guard Entries into Anaconda.mp4", title: "Half Guard Entries Into Anaconda", duration: "7:12" },
+                ]
+            },
+            {
+                title: "Part 6",
+                chapters: [
+                    { file: "7290895368290-06-01- Anaconda From Side And Mount Pins  Counter The Kipping Escape.mp4", title: "Anaconda From Side And Mount Pins: Counter The Kipping Escape", duration: "4:56" },
+                    { file: "7290895368290-06-02- Anaconda From Side Control Top.mp4", title: "Anaconda From Side Control Top", duration: "5:19" },
+                    { file: "7290895368290-06-03- Anaconda From Guard Position  Arm In Guillotine To Anaconda.mp4", title: "Anaconda From Guard Position: Arm In Guillotine To Anaconda", duration: "3:23" },
+                    { file: "7290895368290-06-04- Front Headlock Sumi Gaeshi Into Anaconda.mp4", title: "Front Headlock Sumi Gaeshi Into Anaconda", duration: "3:28" },
+                    { file: "7290895368290-06-05- Heisting Into Anaconda From Seated Guard.mp4", title: "Heisting Into Anaconda From Seated Guard", duration: "2:29" },
+                ]
+            },
+            {
+                title: "Part 7",
+                chapters: [
+                    { file: "7290895368290-07-01- Anaconda From The Back  Reverse Kata Gatame Into Anaconda Strangle.mp4", title: "Anaconda From The Back: Reverse Kata Gatame Into Anaconda Strangle", duration: "4:27" },
+                    { file: "7290895368290-07-02- Combining Anaconda With Other Submission Holds  Anaconda And Guillotine.mp4", title: "Combining Anaconda With Other Submission Holds: Anaconda And Guillotine", duration: "8:19" },
+                    { file: "7290895368290-07-03- Anaconda And Darce.mp4", title: "Anaconda And Darce", duration: "8:53" },
+                ]
+            },
+            {
+                title: "Part 8",
+                chapters: [
+                    { file: "7290895368290-08-01- When You Can't Break Your Opponent Down To T Position  The Default Option_ Go Behind.mp4", title: "When You Can't Break Your Opponent Down To T Position: The Default Option — Go Behind", duration: "6:02" },
+                    { file: "7290895368290-08-02- Front Headlock Olympic Roll Strangle.mp4", title: "Front Headlock Olympic Roll Strangle", duration: "8:10" },
+                    { file: "7290895368290-08-03- Guard Pull Anaconda.mp4", title: "Guard Pull Anaconda", duration: "7:23" },
+                ]
+            },
+        ];
+
+        const player = document.getElementById('player');
+        const videoSource = document.getElementById('video-source');
+        const nowPlaying = document.getElementById('now-playing');
+        const playlist = document.getElementById('playlist');
+
+        let allChapters = [];
+        let currentIndex = -1;
+
+        // Build playlist UI
+        course.forEach((part, partIdx) => {
+            const partDiv = document.createElement('div');
+            partDiv.className = 'part';
+
+            const header = document.createElement('div');
+            header.className = 'part-header';
+            header.innerHTML = `
+                <h2>${part.title}</h2>
+                <span class="count">${part.chapters.length} chapters</span>
+                <span class="arrow">▼</span>
+            `;
+            header.addEventListener('click', () => {
+                partDiv.classList.toggle('collapsed');
+            });
+
+            const chaptersDiv = document.createElement('div');
+            chaptersDiv.className = 'chapters';
+
+            part.chapters.forEach((ch, chIdx) => {
+                const globalIdx = allChapters.length;
+                allChapters.push(ch);
+
+                const chDiv = document.createElement('div');
+                chDiv.className = 'chapter';
+                chDiv.dataset.index = globalIdx;
+                chDiv.innerHTML = `
+                    <span class="num">${partIdx + 1}.${chIdx + 1}</span>
+                    <span class="title">${ch.title}</span>
+                    <span class="duration">${ch.duration}</span>
+                `;
+                chDiv.addEventListener('click', () => playChapter(globalIdx));
+                chaptersDiv.appendChild(chDiv);
+            });
+
+            partDiv.appendChild(header);
+            partDiv.appendChild(chaptersDiv);
+            playlist.appendChild(partDiv);
+        });
+
+        function playChapter(index) {
+            const ch = allChapters[index];
+            currentIndex = index;
+
+            videoSource.src = encodeURIComponent(ch.file);
+            player.load();
+            player.play();
+
+            nowPlaying.innerHTML = `<strong>Now playing:</strong> ${ch.title}`;
+
+            // Update active state
+            document.querySelectorAll('.chapter').forEach(el => el.classList.remove('active'));
+            document.querySelector(`.chapter[data-index="${index}"]`).classList.add('active');
+        }
+
+        // Auto-play next chapter when current one ends
+        player.addEventListener('ended', () => {
+            if (currentIndex < allChapters.length - 1) {
+                playChapter(currentIndex + 1);
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT') return;
+            if (e.key === 'n' || e.key === 'N') {
+                if (currentIndex < allChapters.length - 1) playChapter(currentIndex + 1);
+            } else if (e.key === 'p' || e.key === 'P') {
+                if (currentIndex > 0) playChapter(currentIndex - 1);
+            }
+        });
+    </script>
+</body>
+</html>
