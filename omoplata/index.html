@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master The Omoplata — John Danaher</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .player-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #111;
+            padding-bottom: 16px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        .now-playing {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .now-playing strong {
+            color: #fff;
+        }
+
+        .part {
+            margin-bottom: 12px;
+        }
+
+        .part-header {
+            background: #1a1a2e;
+            border: 1px solid #2a2a4a;
+            border-radius: 6px;
+            padding: 12px 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .part-header:hover {
+            background: #222244;
+        }
+
+        .part-header h2 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .part-header .count {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .part-header .arrow {
+            transition: transform 0.2s;
+            color: #666;
+        }
+
+        .part.collapsed .arrow {
+            transform: rotate(-90deg);
+        }
+
+        .part.collapsed .chapters {
+            display: none;
+        }
+
+        .chapters {
+            padding: 4px 0 4px 0;
+        }
+
+        .chapter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px 10px 24px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.15s;
+        }
+
+        .chapter:hover {
+            background: #1a1a2e;
+        }
+
+        .chapter.active {
+            background: #1a2a4a;
+            border-left: 3px solid #4488ff;
+            padding-left: 21px;
+        }
+
+        .chapter .num {
+            font-size: 0.75rem;
+            color: #666;
+            min-width: 28px;
+        }
+
+        .chapter .title {
+            flex: 1;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .chapter .duration {
+            font-size: 0.7rem;
+            color: #666;
+            font-family: monospace;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="player-wrapper">
+            <h1>Master The Omoplata — John Danaher</h1>
+            <div class="video-container">
+                <video id="player" controls preload="metadata">
+                    <source id="video-source" src="" type="video/mp4">
+                </video>
+            </div>
+            <div class="now-playing" id="now-playing">Click a chapter to start playing</div>
+        </div>
+
+        <div id="playlist"></div>
+    </div>
+
+    <script>
+        const course = [
+            {
+                title: "Volume 1",
+                chapters: [
+                    { file: "7760965140578-01-01- Intro.mp4", title: "Intro", duration: "3:15" },
+                    { file: "7760965140578-01-02- The Main Theme Of This Video And An Analysis Of The Traditional Omoplata Technique.mp4", title: "The Main Theme Of This Video And An Analysis Of The Traditional Omoplata Technique", duration: "10:22" },
+                    { file: "7760965140578-01-03- Summarizing The 5 Major Problems That Any Omoplata Must Overcome.mp4", title: "Summarizing The 5 Major Problems That Any Omoplata Must Overcome", duration: "7:48" },
+                    { file: "7760965140578-01-04- The Clamp.mp4", title: "The Clamp", duration: "6:45" },
+                    { file: "7760965140578-01-05- The Trap Triangle.mp4", title: "The Trap Triangle", duration: "4:42" },
+                    { file: "7760965140578-01-06- The Williams Guard.mp4", title: "The Williams Guard", duration: "5:57" },
+                    { file: "7760965140578-01-07- Half Guard Knee Lever.mp4", title: "Half Guard Knee Lever", duration: "3:01" },
+                    { file: "7760965140578-01-08- Body Lock Counter With Omoplata.mp4", title: "Body Lock Counter With Omoplata", duration: "5:55" },
+                    { file: "7760965140578-01-09- Stepover Entries Into Omoplata.mp4", title: "Stepover Entries Into Omoplata", duration: "6:35" },
+                    { file: "7760965140578-01-10- Entering Omoplata From Single Leg.mp4", title: "Entering Omoplata From Single Leg", duration: "6:19" },
+                ]
+            },
+            {
+                title: "Volume 2",
+                chapters: [
+                    { file: "7760965140578-02-01- Your First Goal- Establishing Outside Hip And Post Position.mp4", title: "Your First Goal: Establishing Outside Hip And Post Position", duration: "9:12" },
+                    { file: "7760965140578-02-02- What Does It Really Mean To Win The Battle For Height.mp4", title: "What Does It Really Mean To Win The Battle For Height", duration: "14:21" },
+                    { file: "7760965140578-02-03-How To Win The Battle For Posture And Movement.mp4", title: "How To Win The Battle For Posture And Movement", duration: "9:14" },
+                    { file: "7760965140578-02-04-Important Tricks For Establishing Initial Control From Omoplata.mp4", title: "Important Tricks For Establishing Initial Control From Omoplata", duration: "10:02" },
+                    { file: "7760965140578-02-05-A New Approach To Omoplata Breaking Mechanics- The Switching Knees Method.mp4", title: "A New Approach To Omoplata Breaking Mechanics: The Switching Knees Method", duration: "20:31" },
+                    { file: "7760965140578-02-06-An Alternative Method To Winning The Battle For Height- The Outside Hip Roll.mp4", title: "An Alternative Method To Winning The Battle For Height: The Outside Hip Roll", duration: "17:42" },
+                ]
+            },
+            {
+                title: "Volume 3",
+                chapters: [
+                    { file: "7760965140578-03-01- The Most Important Skill Of Omoplata- Ride Time.mp4", title: "The Most Important Skill Of Omoplata: Ride Time", duration: "8:10" },
+                    { file: "7760965140578-03-02- Following An Inside Shoulder Roll.mp4", title: "Following An Inside Shoulder Roll", duration: "11:36" },
+                    { file: "7760965140578-03-03- Following An Outside Shoulder Roll.mp4", title: "Following An Outside Shoulder Roll", duration: "6:26" },
+                    { file: "7760965140578-03-04- Following A Cross Body Roll.mp4", title: "Following A Cross Body Roll", duration: "6:54" },
+                    { file: "7760965140578-03-05- Following A Cartwheel.mp4", title: "Following A Cartwheel", duration: "13:51" },
+                    { file: "7760965140578-03-06- Countering An Outside Leg Post.mp4", title: "Countering An Outside Leg Post", duration: "6:12" },
+                    { file: "7760965140578-03-07- Countering An Inside Leg Post.mp4", title: "Countering An Inside Leg Post", duration: "4:28" },
+                    { file: "7760965140578-03-08- Countering A Sit-Out.mp4", title: "Countering A Sit-Out", duration: "6:46" },
+                ]
+            },
+            {
+                title: "Volume 4",
+                chapters: [
+                    { file: "7760965140578-04-01- Bicep Sweep.mp4", title: "Bicep Sweep", duration: "4:18" },
+                    { file: "7760965140578-04-02- The Outside Inside Sweep.mp4", title: "The Outside Inside Sweep", duration: "3:33" },
+                    { file: "7760965140578-04-03- Far Leg Sweep.mp4", title: "Far Leg Sweep", duration: "6:07" },
+                    { file: "7760965140578-04-04- Far Ankle Hook.mp4", title: "Far Ankle Hook", duration: "4:05" },
+                    { file: "7760965140578-04-05- A Danger To Look Out For When Riding Omoplata- Double Omoplata.mp4", title: "A Danger To Look Out For When Riding Omoplata: Double Omoplata", duration: "7:59" },
+                ]
+            },
+            {
+                title: "Volume 5",
+                chapters: [
+                    { file: "7760965140578-05-01- Switching Knees Position.mp4", title: "Switching Knees Position", duration: "7:28" },
+                    { file: "7760965140578-05-02- The Cruciplata Position.mp4", title: "The Cruciplata Position", duration: "11:43" },
+                    { file: "7760965140578-05-03- The Cruciplata Strangle.mp4", title: "The Cruciplata Strangle", duration: "7:54" },
+                    { file: "7760965140578-05-04- Bicep Pin.mp4", title: "Bicep Pin", duration: "5:52" },
+                    { file: "7760965140578-05-05- Outside Scoop Arm Bar.mp4", title: "Outside Scoop Arm Bar", duration: "6:13" },
+                ]
+            },
+            {
+                title: "Volume 6",
+                chapters: [
+                    { file: "7760965140578-06-01- An Alternative Approach To Omoplata- The Inverted Knee.mp4", title: "An Alternative Approach To Omoplata: The Inverted Knee", duration: "18:17" },
+                    { file: "7760965140578-06-02- Omoplata And Triangle Relationship.mp4", title: "Omoplata And Triangle Relationship", duration: "4:08" },
+                    { file: "7760965140578-06-03- Omoplata And Head Scissor Arm Bar.mp4", title: "Omoplata And Head Scissor Arm Bar", duration: "6:52" },
+                    { file: "7760965140578-06-04- Omoplata As A Reversal.mp4", title: "Omoplata As A Reversal", duration: "7:23" },
+                ]
+            },
+        ];
+
+        const player = document.getElementById('player');
+        const videoSource = document.getElementById('video-source');
+        const nowPlaying = document.getElementById('now-playing');
+        const playlist = document.getElementById('playlist');
+
+        let allChapters = [];
+        let currentIndex = -1;
+
+        // Build playlist UI
+        course.forEach((part, partIdx) => {
+            const partDiv = document.createElement('div');
+            partDiv.className = 'part';
+
+            const header = document.createElement('div');
+            header.className = 'part-header';
+            header.innerHTML = `
+                <h2>${part.title}</h2>
+                <span class="count">${part.chapters.length} chapters</span>
+                <span class="arrow">▼</span>
+            `;
+            header.addEventListener('click', () => {
+                partDiv.classList.toggle('collapsed');
+            });
+
+            const chaptersDiv = document.createElement('div');
+            chaptersDiv.className = 'chapters';
+
+            part.chapters.forEach((ch, chIdx) => {
+                const globalIdx = allChapters.length;
+                allChapters.push(ch);
+
+                const chDiv = document.createElement('div');
+                chDiv.className = 'chapter';
+                chDiv.dataset.index = globalIdx;
+                chDiv.innerHTML = `
+                    <span class="num">${partIdx + 1}.${chIdx + 1}</span>
+                    <span class="title">${ch.title}</span>
+                    <span class="duration">${ch.duration}</span>
+                `;
+                chDiv.addEventListener('click', () => playChapter(globalIdx));
+                chaptersDiv.appendChild(chDiv);
+            });
+
+            partDiv.appendChild(header);
+            partDiv.appendChild(chaptersDiv);
+            playlist.appendChild(partDiv);
+        });
+
+        function playChapter(index) {
+            const ch = allChapters[index];
+            currentIndex = index;
+
+            videoSource.src = encodeURIComponent(ch.file);
+            player.load();
+            player.play();
+
+            nowPlaying.innerHTML = `<strong>Now playing:</strong> ${ch.title}`;
+
+            // Update active state
+            document.querySelectorAll('.chapter').forEach(el => el.classList.remove('active'));
+            document.querySelector(`.chapter[data-index="${index}"]`).classList.add('active');
+        }
+
+        // Auto-play next chapter when current one ends
+        player.addEventListener('ended', () => {
+            if (currentIndex < allChapters.length - 1) {
+                playChapter(currentIndex + 1);
+            }
+        });
+
+        // Keyboard shortcuts — always active regardless of focus
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            switch (e.key) {
+                case 'n': case 'N':
+                    e.preventDefault();
+                    if (currentIndex < allChapters.length - 1) playChapter(currentIndex + 1);
+                    break;
+                case 'p': case 'P':
+                    e.preventDefault();
+                    if (currentIndex > 0) playChapter(currentIndex - 1);
+                    break;
+                case 'f': case 'F':
+                    e.preventDefault();
+                    if (document.fullscreenElement) {
+                        document.exitFullscreen();
+                    } else {
+                        player.requestFullscreen();
+                    }
+                    break;
+                case 'j': case 'J':
+                    e.preventDefault();
+                    player.currentTime = Math.max(0, player.currentTime - 10);
+                    break;
+                case 'l': case 'L':
+                    e.preventDefault();
+                    player.currentTime = Math.min(player.duration, player.currentTime + 10);
+                    break;
+                case 'k': case 'K':
+                    e.preventDefault();
+                    player.paused ? player.play() : player.pause();
+                    break;
+                case ' ':
+                    e.preventDefault();
+                    player.paused ? player.play() : player.pause();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    player.currentTime = Math.max(0, player.currentTime - 5);
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    player.currentTime = Math.min(player.duration, player.currentTime + 5);
+                    break;
+            }
+        });
+
+        // Prevent video element from capturing keyboard focus
+        player.addEventListener('focus', () => player.blur());
+    </script>
+</body>
+
+</html>

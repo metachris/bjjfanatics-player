@@ -1,0 +1,25 @@
+# BJJ Fanatics Courses
+
+Local video players for purchased BJJ Fanatics courses.
+
+## Courses
+
+- [Anaconda Strangle — John Danaher](anaconda/index.html)
+- [Omoplata — John Danaher](omoplata/index.html)
+
+## Usage
+
+Open any `index.html` in a browser to watch locally downloaded videos.
+
+### Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| Space / K | Play/pause |
+| F | Fullscreen |
+| J | Skip back 10s |
+| L | Skip forward 10s |
+| ← | Skip back 5s |
+| → | Skip forward 5s |
+| N | Next chapter |
+| P | Previous chapter |
