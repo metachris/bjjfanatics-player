@@ -57,6 +57,27 @@
             background: #000;
         }
 
+        .speed-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 5;
+        }
+
+        .speed-overlay.visible {
+            opacity: 1;
+        }
+
         .now-playing {
             margin-top: 8px;
             font-size: 0.85rem;
@@ -163,6 +184,7 @@
                 <video id="player" controls preload="metadata">
                     <source id="video-source" src="" type="video/mp4">
                 </video>
+                <div class="speed-overlay" id="speed-overlay"></div>
             </div>
             <div class="now-playing" id="now-playing">Click a chapter to start playing</div>
         </div>
@@ -363,11 +385,36 @@
                     e.preventDefault();
                     player.currentTime = Math.min(player.duration, player.currentTime + 5);
                     break;
+                case '<':
+                    e.preventDefault();
+                    player.playbackRate = Math.max(0.25, player.playbackRate - 0.25);
+                    showSpeedOverlay();
+                    break;
+                case '>':
+                    e.preventDefault();
+                    player.playbackRate = Math.min(4, player.playbackRate + 0.25);
+                    showSpeedOverlay();
+                    break;
+                case '0': case '1': case '2': case '3': case '4':
+                case '5': case '6': case '7': case '8': case '9':
+                    e.preventDefault();
+                    if (player.duration) player.currentTime = player.duration * (parseInt(e.key) / 10);
+                    break;
             }
         });
 
         // Prevent video element from capturing keyboard focus
         player.addEventListener('focus', () => player.blur());
+
+        // Speed overlay
+        const speedOverlay = document.getElementById('speed-overlay');
+        let speedTimeout;
+        function showSpeedOverlay() {
+            speedOverlay.textContent = player.playbackRate + 'x';
+            speedOverlay.classList.add('visible');
+            clearTimeout(speedTimeout);
+            speedTimeout = setTimeout(() => speedOverlay.classList.remove('visible'), 800);
+        }
     </script>
 </body>
 

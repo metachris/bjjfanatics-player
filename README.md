@@ -23,3 +23,6 @@ Open any `index.html` in a browser to watch locally downloaded videos.
 | → | Skip forward 5s |
 | N | Next chapter |
 | P | Previous chapter |
+| < | Decrease playback rate |
+| > | Increase playback rate |
+| 0–9 | Seek to 0%–90% of video |
