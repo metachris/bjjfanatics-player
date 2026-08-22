@@ -290,13 +290,16 @@
             playlist.appendChild(partDiv);
         });
 
-        function playChapter(index) {
+        const STORAGE_KEY = 'bjj-omoplata-last-chapter';
+
+        function playChapter(index, autoplay = true) {
             const ch = allChapters[index];
             currentIndex = index;
+            localStorage.setItem(STORAGE_KEY, index);
 
             videoSource.src = encodeURIComponent(ch.file);
             player.load();
-            player.play();
+            if (autoplay) player.play();
 
             nowPlaying.innerHTML = `<strong>Now playing:</strong> ${ch.title}`;
 
@@ -304,6 +307,10 @@
             document.querySelectorAll('.chapter').forEach(el => el.classList.remove('active'));
             document.querySelector(`.chapter[data-index="${index}"]`).classList.add('active');
         }
+
+        // Load last played chapter (or first) on page open
+        const saved = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+        playChapter(saved >= 0 && saved < allChapters.length ? saved : 0, false);
 
         // Auto-play next chapter when current one ends
         player.addEventListener('ended', () => {
