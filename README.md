@@ -26,3 +26,4 @@ Open any `index.html` in a browser to watch locally downloaded videos.
 | < | Decrease playback rate |
 | > | Increase playback rate |
 | 0–9 | Seek to 0%–90% of video |
+| ? | Show keyboard shortcuts |
