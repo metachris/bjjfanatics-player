@@ -6,6 +6,7 @@ Local video players for purchased BJJ Fanatics courses.
 
 - [Anaconda Strangle — John Danaher](anaconda/index.html)
 - [Omoplata — John Danaher](omoplata/index.html)
+- [Enter The System: Front Headlocks — John Danaher](front-headlock/index.html)
 
 ## Usage
 
