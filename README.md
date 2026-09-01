@@ -22,6 +22,7 @@ The URL updates automatically when you select a chapter, so it can be copied and
 |-----|--------|
 | Space / K | Play/pause |
 | F | Fullscreen |
+| T | Theater mode |
 | J | Skip back 10s |
 | L | Skip forward 10s |
 | ← | Skip back 5s |

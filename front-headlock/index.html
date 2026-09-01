@@ -23,6 +23,18 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            transition: max-width 0.2s ease;
+        }
+
+        body.theater-mode .container {
+            max-width: 1400px;
+        }
+
+        body.theater-mode .chapter-search,
+        body.theater-mode #playlist {
+            max-width: 960px;
+            margin-right: auto;
+            margin-left: auto;
         }
 
         h1 {
@@ -339,6 +351,7 @@
         <div class="shortcuts-list">
             <span>Play or pause</span><span class="shortcut-keys"><kbd>Space</kbd><kbd>K</kbd></span>
             <span>Fullscreen</span><span class="shortcut-keys"><kbd>F</kbd></span>
+            <span>Theater mode</span><span class="shortcut-keys"><kbd>T</kbd></span>
             <span>Skip back 10 seconds</span><span class="shortcut-keys"><kbd>J</kbd></span>
             <span>Skip forward 10 seconds</span><span class="shortcut-keys"><kbd>L</kbd></span>
             <span>Skip back 5 seconds</span><span class="shortcut-keys"><kbd>&larr;</kbd></span>
@@ -474,6 +487,14 @@
         const searchInput = document.getElementById('chapter-search');
         const shortcutsDialog = document.getElementById('shortcuts-dialog');
 
+        const THEATER_STORAGE_KEY = 'bjj-theater-mode';
+        document.body.classList.toggle('theater-mode', localStorage.getItem(THEATER_STORAGE_KEY) === 'true');
+
+        function toggleTheaterMode() {
+            const enabled = document.body.classList.toggle('theater-mode');
+            localStorage.setItem(THEATER_STORAGE_KEY, enabled);
+        }
+
         shortcutsDialog.addEventListener('click', (e) => {
             const bounds = shortcutsDialog.getBoundingClientRect();
             const clickedOutside = e.clientX < bounds.left || e.clientX > bounds.right
@@ -608,6 +629,10 @@
                 case 'f': case 'F':
                     e.preventDefault();
                     document.fullscreenElement ? document.exitFullscreen() : player.requestFullscreen();
+                    break;
+                case 't': case 'T':
+                    e.preventDefault();
+                    toggleTheaterMode();
                     break;
                 case 'j': case 'J':
                     e.preventDefault();
