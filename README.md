@@ -11,6 +11,10 @@ Local video players for purchased BJJ Fanatics courses.
 
 Open any `index.html` in a browser to watch locally downloaded videos.
 
+Use the `chapter` URL parameter to open a specific chapter. The value matches the
+chapter number shown in the playlist, for example `anaconda/index.html?chapter=2.3`.
+The URL updates automatically when you select a chapter, so it can be copied and shared.
+
 ### Keyboard Shortcuts
 
 | Key | Action |

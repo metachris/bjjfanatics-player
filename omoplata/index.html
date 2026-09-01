@@ -375,6 +375,7 @@
         });
 
         let allChapters = [];
+        let chapterIds = [];
         let currentIndex = -1;
 
         // Build playlist UI
@@ -398,13 +399,15 @@
 
             part.chapters.forEach((ch, chIdx) => {
                 const globalIdx = allChapters.length;
+                const chapterId = `${partIdx + 1}.${chIdx + 1}`;
                 allChapters.push(ch);
+                chapterIds.push(chapterId);
 
                 const chDiv = document.createElement('div');
                 chDiv.className = 'chapter';
                 chDiv.dataset.index = globalIdx;
                 chDiv.innerHTML = `
-                    <span class="num">${partIdx + 1}.${chIdx + 1}</span>
+                    <span class="num">${chapterId}</span>
                     <span class="title">${ch.title}</span>
                     <span class="duration">${ch.duration}</span>
                 `;
@@ -424,6 +427,10 @@
             currentIndex = index;
             localStorage.setItem(STORAGE_KEY, index);
 
+            const url = new URL(window.location.href);
+            url.searchParams.set('chapter', chapterIds[index]);
+            window.history.replaceState(null, '', url);
+
             videoSource.src = encodeURIComponent(ch.file);
             player.load();
             if (autoplay) player.play();
@@ -435,9 +442,14 @@
             document.querySelector(`.chapter[data-index="${index}"]`).classList.add('active');
         }
 
-        // Load last played chapter (or first) on page open
+        // Load the chapter from the URL, the last played chapter, or the first chapter
+        const requestedChapter = new URLSearchParams(window.location.search).get('chapter');
+        const requestedIndex = chapterIds.indexOf(requestedChapter);
         const saved = parseInt(localStorage.getItem(STORAGE_KEY), 10);
-        playChapter(saved >= 0 && saved < allChapters.length ? saved : 0, false);
+        const initialIndex = requestedIndex >= 0
+            ? requestedIndex
+            : (saved >= 0 && saved < allChapters.length ? saved : 0);
+        playChapter(initialIndex, false);
 
         // Auto-play next chapter when current one ends
         player.addEventListener('ended', () => {
