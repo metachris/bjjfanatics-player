@@ -31,4 +31,5 @@ The URL updates automatically when you select a chapter, so it can be copied and
 | < | Decrease playback rate |
 | > | Increase playback rate |
 | 0–9 | Seek to 0%–90% of video |
+| / | Search chapters |
 | ? | Show keyboard shortcuts |
