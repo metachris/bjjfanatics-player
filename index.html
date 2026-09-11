@@ -409,6 +409,8 @@
             <span>Skip forward 5 seconds</span><span class="shortcut-keys"><kbd>&rarr;</kbd></span>
             <span>Previous chapter</span><span class="shortcut-keys"><kbd>P</kbd></span>
             <span>Next chapter</span><span class="shortcut-keys"><kbd>N</kbd></span>
+            <span>Previous series</span><span class="shortcut-keys"><kbd>[</kbd></span>
+            <span>Next series</span><span class="shortcut-keys"><kbd>]</kbd></span>
             <span>Decrease playback rate</span><span class="shortcut-keys"><kbd>&lt;</kbd></span>
             <span>Increase playback rate</span><span class="shortcut-keys"><kbd>&gt;</kbd></span>
             <span>Seek to percentage</span><span class="shortcut-keys"><kbd>0</kbd>&ndash;<kbd>9</kbd></span>
@@ -633,6 +635,26 @@
                     e.preventDefault();
                     if (currentIndex > 0) playChapter(currentIndex - 1);
                     break;
+                case '[': {
+                    e.preventDefault();
+                    const keys = Object.keys(SERIES);
+                    const idx = keys.indexOf(currentSeriesKey);
+                    if (idx > 0) {
+                        saveCurrentPosition();
+                        loadSeries(keys[idx - 1], null, false);
+                    }
+                    break;
+                }
+                case ']': {
+                    e.preventDefault();
+                    const keys = Object.keys(SERIES);
+                    const idx = keys.indexOf(currentSeriesKey);
+                    if (idx < keys.length - 1) {
+                        saveCurrentPosition();
+                        loadSeries(keys[idx + 1], null, false);
+                    }
+                    break;
+                }
                 case 'f': case 'F':
                     e.preventDefault();
                     document.fullscreenElement ? document.exitFullscreen() : player.requestFullscreen();
