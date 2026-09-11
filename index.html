@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJJ Fanatics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            color: #e0e0e0;
+            background: #111;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: max-width 0.2s ease;
+        }
+
+        body.theater-mode .container {
+            max-width: 1400px;
+        }
+
+        body.theater-mode .chapter-search,
+        body.theater-mode #playlist {
+            max-width: 960px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 1.4rem;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .series-selector {
+            position: relative;
+        }
+
+        .series-selector select {
+            appearance: none;
+            padding: 10px 36px 10px 14px;
+            color: #e0e0e0;
+            background: #1a1a2e;
+            border: 1px solid #2a2a4a;
+            border-radius: 6px;
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.85rem;
+        }
+
+        .series-selector select:hover {
+            background: #222244;
+        }
+
+        .series-selector select:focus {
+            border-color: #4488ff;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(68, 136, 255, 0.2);
+        }
+
+        .series-selector::after {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            color: #666;
+            pointer-events: none;
+            content: "▼";
+            transform: translateY(-50%);
+            font-size: 0.7rem;
+        }
+
+        .player-wrapper {
+            position: sticky;
+            z-index: 10;
+            top: 0;
+            padding-bottom: 16px;
+            background: #111;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 8px;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        .speed-overlay {
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            left: 50%;
+            padding: 10px 20px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.2s;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .speed-overlay.visible {
+            opacity: 1;
+        }
+
+        .now-playing {
+            margin-top: 8px;
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+
+        .now-playing strong {
+            color: #fff;
+        }
+
+        .part {
+            margin-bottom: 12px;
+        }
+
+        .part-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: #1a1a2e;
+            border: 1px solid #2a2a4a;
+            border-radius: 6px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .part-header:hover {
+            background: #222244;
+        }
+
+        .part-header h2 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .part-header .count {
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        .part-header .arrow {
+            color: #666;
+            transition: transform 0.2s;
+        }
+
+        .part.collapsed .arrow {
+            transform: rotate(-90deg);
+        }
+
+        .part.collapsed .chapters {
+            display: none;
+        }
+
+        body.searching .part.collapsed .chapters {
+            display: block;
+        }
+
+        body.searching .part.collapsed .arrow {
+            transform: none;
+        }
+
+        .chapters {
+            padding: 4px 0;
+        }
+
+        .chapter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .chapter:hover {
+            background: #1a1a2e;
+        }
+
+        .chapter.active {
+            padding-left: 21px;
+            background: #1a2a4a;
+            border-left: 3px solid #4488ff;
+        }
+
+        .chapter .num {
+            min-width: 28px;
+            color: #666;
+            font-size: 0.75rem;
+        }
+
+        .chapter .title {
+            flex: 1;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .chapter .duration {
+            color: #666;
+            font-family: monospace;
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+
+        .chapter-search {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .chapter-search input {
+            width: 100%;
+            padding: 10px 42px 10px 36px;
+            color: #e0e0e0;
+            background: #181818;
+            border: 1px solid #333;
+            border-radius: 6px;
+            outline: none;
+            font: inherit;
+            font-size: 0.85rem;
+        }
+
+        .chapter-search input:focus {
+            border-color: #4488ff;
+            box-shadow: 0 0 0 2px rgba(68, 136, 255, 0.2);
+        }
+
+        .search-icon,
+        .search-hint {
+            position: absolute;
+            top: 50%;
+            color: #777;
+            pointer-events: none;
+            transform: translateY(-50%);
+        }
+
+        .search-icon {
+            left: 12px;
+        }
+
+        .search-hint {
+            right: 12px;
+            padding: 1px 6px;
+            background: #292929;
+            border: 1px solid #444;
+            border-radius: 4px;
+            font: 0.7rem ui-monospace, SFMono-Regular, Menlo, monospace;
+        }
+
+        .chapter-search input:focus+.search-hint,
+        .chapter-search input:not(:placeholder-shown)+.search-hint {
+            display: none;
+        }
+
+        .shortcuts-dialog {
+            width: min(440px, calc(100% - 32px));
+            max-height: calc(100vh - 32px);
+            margin: auto;
+            padding: 0;
+            overflow: auto;
+            color: #e0e0e0;
+            background: #1a1a2e;
+            border: 1px solid #3a3a5a;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+        }
+
+        .shortcuts-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        .shortcuts-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            border-bottom: 1px solid #2a2a4a;
+        }
+
+        .shortcuts-header h2 {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .shortcuts-close {
+            padding: 4px 8px;
+            color: #aaa;
+            background: transparent;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .shortcuts-close:hover,
+        .shortcuts-close:focus-visible {
+            color: #fff;
+            background: #2a2a4a;
+            outline: none;
+        }
+
+        .shortcuts-list {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px 24px;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        .shortcut-keys {
+            display: flex;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+
+        kbd {
+            min-width: 28px;
+            padding: 3px 7px;
+            color: #fff;
+            background: #292943;
+            border: 1px solid #454568;
+            border-bottom-width: 2px;
+            border-radius: 4px;
+            font: 0.75rem ui-monospace, SFMono-Regular, Menlo, monospace;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="player-wrapper">
+            <div class="header">
+                <h1 id="series-title">BJJ Fanatics</h1>
+                <div class="series-selector">
+                    <select id="series-select" aria-label="Select series"></select>
+                </div>
+            </div>
+            <div class="video-container">
+                <video id="player" controls preload="metadata">
+                    <source id="video-source" src="" type="video/mp4">
+                </video>
+                <div class="speed-overlay" id="speed-overlay"></div>
+            </div>
+            <div class="now-playing" id="now-playing">Click a chapter to start playing</div>
+        </div>
+
+        <div class="chapter-search">
+            <span class="search-icon" aria-hidden="true">&#8981;</span>
+            <input id="chapter-search" type="search" placeholder="Search chapters" aria-label="Search chapters"
+                autocomplete="off">
+            <span class="search-hint" aria-hidden="true">/</span>
+        </div>
+        <div id="playlist"></div>
+    </div>
+
+    <dialog class="shortcuts-dialog" id="shortcuts-dialog" aria-labelledby="shortcuts-title">
+        <div class="shortcuts-header">
+            <h2 id="shortcuts-title">Keyboard shortcuts</h2>
+            <form method="dialog">
+                <button class="shortcuts-close" aria-label="Close keyboard shortcuts">&times;</button>
+            </form>
+        </div>
+        <div class="shortcuts-list">
+            <span>Play or pause</span><span class="shortcut-keys"><kbd>Space</kbd><kbd>K</kbd></span>
+            <span>Fullscreen</span><span class="shortcut-keys"><kbd>F</kbd></span>
+            <span>Theater mode</span><span class="shortcut-keys"><kbd>T</kbd></span>
+            <span>Skip back 10 seconds</span><span class="shortcut-keys"><kbd>J</kbd></span>
+            <span>Skip forward 10 seconds</span><span class="shortcut-keys"><kbd>L</kbd></span>
+            <span>Skip back 5 seconds</span><span class="shortcut-keys"><kbd>&larr;</kbd></span>
+            <span>Skip forward 5 seconds</span><span class="shortcut-keys"><kbd>&rarr;</kbd></span>
+            <span>Previous chapter</span><span class="shortcut-keys"><kbd>P</kbd></span>
+            <span>Next chapter</span><span class="shortcut-keys"><kbd>N</kbd></span>
+            <span>Decrease playback rate</span><span class="shortcut-keys"><kbd>&lt;</kbd></span>
+            <span>Increase playback rate</span><span class="shortcut-keys"><kbd>&gt;</kbd></span>
+            <span>Seek to percentage</span><span class="shortcut-keys"><kbd>0</kbd>&ndash;<kbd>9</kbd></span>
+            <span>Search chapters</span><span class="shortcut-keys"><kbd>/</kbd></span>
+            <span>Show this help</span><span class="shortcut-keys"><kbd>?</kbd></span>
+        </div>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script>
+        const player = document.getElementById('player');
+        const videoSource = document.getElementById('video-source');
+        const nowPlaying = document.getElementById('now-playing');
+        const playlist = document.getElementById('playlist');
+        const searchInput = document.getElementById('chapter-search');
+        const shortcutsDialog = document.getElementById('shortcuts-dialog');
+        const seriesSelect = document.getElementById('series-select');
+        const seriesTitle = document.getElementById('series-title');
+
+        const THEATER_STORAGE_KEY = 'bjj-theater-mode';
+        document.body.classList.toggle('theater-mode', localStorage.getItem(THEATER_STORAGE_KEY) === 'true');
+
+        function toggleTheaterMode() {
+            const enabled = document.body.classList.toggle('theater-mode');
+            localStorage.setItem(THEATER_STORAGE_KEY, enabled);
+        }
+
+        shortcutsDialog.addEventListener('click', (e) => {
+            const bounds = shortcutsDialog.getBoundingClientRect();
+            const clickedOutside = e.clientX < bounds.left || e.clientX > bounds.right
+                || e.clientY < bounds.top || e.clientY > bounds.bottom;
+            if (clickedOutside) shortcutsDialog.close();
+        });
+
+        let currentSeriesKey = null;
+        let currentSeries = null;
+        let allChapters = [];
+        let chapterIds = [];
+        let currentIndex = -1;
+
+        Object.entries(SERIES).forEach(([key, series]) => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = series.title;
+            seriesSelect.appendChild(option);
+        });
+
+        function getStorageKey(seriesKey) {
+            return `bjj-${seriesKey}-last-chapter`;
+        }
+
+        function loadSeries(seriesKey, chapterId = null, autoplay = false) {
+            if (!SERIES[seriesKey]) return;
+
+            currentSeriesKey = seriesKey;
+            currentSeries = SERIES[seriesKey];
+            allChapters = [];
+            chapterIds = [];
+            currentIndex = -1;
+
+            seriesSelect.value = seriesKey;
+            seriesTitle.textContent = `${currentSeries.title} — ${currentSeries.instructor}`;
+            document.title = `${currentSeries.title} — ${currentSeries.instructor}`;
+
+            playlist.innerHTML = '';
+
+            currentSeries.volumes.forEach((volume) => {
+                const partDiv = document.createElement('div');
+                partDiv.className = 'part';
+
+                const header = document.createElement('div');
+                header.className = 'part-header';
+                header.innerHTML = `
+                    <h2>${volume.title}</h2>
+                    <span class="count">${volume.chapters.length} chapters</span>
+                    <span class="arrow">&#9660;</span>
+                `;
+                header.addEventListener('click', () => partDiv.classList.toggle('collapsed'));
+
+                const chaptersDiv = document.createElement('div');
+                chaptersDiv.className = 'chapters';
+
+                volume.chapters.forEach((ch) => {
+                    const globalIdx = allChapters.length;
+                    allChapters.push(ch);
+                    chapterIds.push(ch.number);
+
+                    const chDiv = document.createElement('div');
+                    chDiv.className = 'chapter';
+                    chDiv.dataset.index = globalIdx;
+                    chDiv.dataset.search = ch.title.toLocaleLowerCase();
+                    chDiv.innerHTML = `
+                        <span class="num">${ch.number}</span>
+                        <span class="title">${ch.title}</span>
+                        <span class="duration">${ch.duration}</span>
+                    `;
+                    chDiv.addEventListener('click', () => playChapter(globalIdx));
+                    chaptersDiv.appendChild(chDiv);
+                });
+
+                partDiv.appendChild(header);
+                partDiv.appendChild(chaptersDiv);
+                playlist.appendChild(partDiv);
+            });
+
+            const requestedIndex = chapterId ? chapterIds.indexOf(chapterId) : -1;
+            const saved = parseInt(localStorage.getItem(getStorageKey(seriesKey)), 10);
+            const initialIndex = requestedIndex >= 0
+                ? requestedIndex
+                : (saved >= 0 && saved < allChapters.length ? saved : 0);
+            playChapter(initialIndex, autoplay);
+        }
+
+        function filterChapters() {
+            const query = searchInput.value.trim().toLocaleLowerCase();
+            document.body.classList.toggle('searching', query.length > 0);
+
+            document.querySelectorAll('.part').forEach((part) => {
+                let hasMatches = false;
+                part.querySelectorAll('.chapter').forEach((chapter) => {
+                    const matches = chapter.dataset.search.includes(query);
+                    chapter.style.display = matches ? '' : 'none';
+                    hasMatches ||= matches;
+                });
+                part.style.display = hasMatches ? '' : 'none';
+            });
+        }
+
+        searchInput.addEventListener('input', filterChapters);
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return;
+            e.preventDefault();
+            searchInput.value = '';
+            filterChapters();
+            searchInput.blur();
+        });
+
+        function playChapter(index, autoplay = true) {
+            const ch = allChapters[index];
+            currentIndex = index;
+            localStorage.setItem(getStorageKey(currentSeriesKey), index);
+
+            const url = new URL(window.location.href);
+            url.searchParams.set('series', currentSeriesKey);
+            url.searchParams.set('chapter', chapterIds[index]);
+            window.history.replaceState(null, '', url);
+
+            videoSource.src = `${currentSeries.folder}/${encodeURIComponent(ch.file)}`;
+            player.load();
+            if (autoplay) player.play();
+
+            nowPlaying.innerHTML = `<strong>Now playing:</strong> ${ch.title}`;
+            document.querySelectorAll('.chapter').forEach(el => el.classList.remove('active'));
+            document.querySelector(`.chapter[data-index="${index}"]`).classList.add('active');
+        }
+
+        seriesSelect.addEventListener('change', () => {
+            loadSeries(seriesSelect.value, null, false);
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const requestedSeries = params.get('series');
+        const requestedChapter = params.get('chapter');
+        const initialSeries = SERIES[requestedSeries] ? requestedSeries : Object.keys(SERIES)[0];
+        loadSeries(initialSeries, requestedChapter, false);
+
+        player.addEventListener('ended', () => {
+            if (currentIndex < allChapters.length - 1) playChapter(currentIndex + 1);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+            if (e.key === '?') {
+                e.preventDefault();
+                if (!shortcutsDialog.open) shortcutsDialog.showModal();
+                return;
+            }
+            if (shortcutsDialog.open) return;
+
+            if (e.key === '/') {
+                e.preventDefault();
+                searchInput.focus();
+                searchInput.select();
+                return;
+            }
+
+            switch (e.key) {
+                case 'n': case 'N':
+                    e.preventDefault();
+                    if (currentIndex < allChapters.length - 1) playChapter(currentIndex + 1);
+                    break;
+                case 'p': case 'P':
+                    e.preventDefault();
+                    if (currentIndex > 0) playChapter(currentIndex - 1);
+                    break;
+                case 'f': case 'F':
+                    e.preventDefault();
+                    document.fullscreenElement ? document.exitFullscreen() : player.requestFullscreen();
+                    break;
+                case 't': case 'T':
+                    e.preventDefault();
+                    toggleTheaterMode();
+                    break;
+                case 'j': case 'J':
+                    e.preventDefault();
+                    player.currentTime = Math.max(0, player.currentTime - 10);
+                    break;
+                case 'l': case 'L':
+                    e.preventDefault();
+                    player.currentTime = Math.min(player.duration, player.currentTime + 10);
+                    break;
+                case 'k': case 'K': case ' ':
+                    e.preventDefault();
+                    player.paused ? player.play() : player.pause();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    player.currentTime = Math.max(0, player.currentTime - 5);
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    player.currentTime = Math.min(player.duration, player.currentTime + 5);
+                    break;
+                case '<':
+                    e.preventDefault();
+                    player.playbackRate = Math.max(0.25, player.playbackRate - 0.25);
+                    showSpeedOverlay();
+                    break;
+                case '>':
+                    e.preventDefault();
+                    player.playbackRate = Math.min(4, player.playbackRate + 0.25);
+                    showSpeedOverlay();
+                    break;
+                case '0': case '1': case '2': case '3': case '4':
+                case '5': case '6': case '7': case '8': case '9':
+                    e.preventDefault();
+                    if (player.duration) player.currentTime = player.duration * (parseInt(e.key) / 10);
+                    break;
+            }
+        });
+
+        player.addEventListener('focus', () => player.blur());
+
+        const speedOverlay = document.getElementById('speed-overlay');
+        let speedTimeout;
+        function showSpeedOverlay() {
+            speedOverlay.textContent = player.playbackRate + 'x';
+            speedOverlay.classList.add('visible');
+            clearTimeout(speedTimeout);
+            speedTimeout = setTimeout(() => speedOverlay.classList.remove('visible'), 800);
+        }
+    </script>
+</body>
+
+</html>
