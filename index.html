@@ -460,6 +460,21 @@
             return `bjj-${seriesKey}-last-chapter`;
         }
 
+        function getPositionKey(seriesKey, chapterId) {
+            return `bjj-${seriesKey}-${chapterId}-time`;
+        }
+
+        function saveCurrentPosition() {
+            if (currentSeriesKey && currentIndex >= 0 && player.currentTime > 5) {
+                const key = getPositionKey(currentSeriesKey, chapterIds[currentIndex]);
+                if (player.currentTime < player.duration - 10) {
+                    localStorage.setItem(key, player.currentTime);
+                } else {
+                    localStorage.removeItem(key);
+                }
+            }
+        }
+
         function loadSeries(seriesKey, chapterId = null, autoplay = false) {
             if (!SERIES[seriesKey]) return;
 
@@ -547,6 +562,8 @@
         });
 
         function playChapter(index, autoplay = true) {
+            saveCurrentPosition();
+
             const ch = allChapters[index];
             currentIndex = index;
             localStorage.setItem(getStorageKey(currentSeriesKey), index);
@@ -558,6 +575,15 @@
 
             videoSource.src = `${currentSeries.folder}/${encodeURIComponent(ch.file)}`;
             player.load();
+
+            const savedTime = parseFloat(localStorage.getItem(getPositionKey(currentSeriesKey, ch.number)));
+            if (savedTime > 0) {
+                player.addEventListener('loadedmetadata', function restore() {
+                    player.currentTime = savedTime;
+                    player.removeEventListener('loadedmetadata', restore);
+                });
+            }
+
             if (autoplay) player.play();
 
             nowPlaying.innerHTML = `<strong>Now playing:</strong> ${ch.title}`;
@@ -566,7 +592,9 @@
         }
 
         seriesSelect.addEventListener('change', () => {
+            saveCurrentPosition();
             loadSeries(seriesSelect.value, null, false);
+            seriesSelect.blur();
         });
 
         const params = new URLSearchParams(window.location.search);
@@ -576,6 +604,7 @@
         loadSeries(initialSeries, requestedChapter, false);
 
         player.addEventListener('ended', () => {
+            localStorage.removeItem(getPositionKey(currentSeriesKey, chapterIds[currentIndex]));
             if (currentIndex < allChapters.length - 1) playChapter(currentIndex + 1);
         });
 
@@ -660,6 +689,11 @@
             clearTimeout(speedTimeout);
             speedTimeout = setTimeout(() => speedOverlay.classList.remove('visible'), 800);
         }
+
+        window.addEventListener('beforeunload', saveCurrentPosition);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) saveCurrentPosition();
+        });
     </script>
 </body>
 
