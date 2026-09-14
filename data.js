@@ -1,4 +1,108 @@
 const SERIES = {
+    "ageless-top-game": {
+        title: "Ageless Jiu Jitsu: Top Game",
+        instructor: "John Danaher",
+        folder: "ageless-jiu-jitsu_top-game",
+        volumes: [
+            {
+                title: "Volume 1",
+                chapters: [
+                    { number: "1.1", file: "6866183159906-01-01-Intro.mp4", title: "Intro", duration: "3:05" },
+                    { number: "1.2", file: "6866183159906-01-02- Half Guard Top Game - Half Guard Maximizes Connection_ Connection Maximizes Control.mp4", title: "Half Guard Top Game: Half Guard Maximizes Connection, Connection Maximizes Control", duration: "5:12" },
+                    { number: "1.3", file: "6866183159906-01-03- Understanding Advantage In Half Guard.mp4", title: "Understanding Advantage In Half Guard", duration: "6:19" },
+                    { number: "1.4", file: "6866183159906-01-04- Half Guard Top_ Getting Into Half Guard Top Position - Toreando Entry.mp4", title: "Half Guard Top: Getting Into Half Guard Top Position - Toreando Entry", duration: "4:19" },
+                    { number: "1.5", file: "6866183159906-01-05- Scoop Knee Drive Entry.mp4", title: "Scoop Knee Drive Entry", duration: "5:20" },
+                    { number: "1.6", file: "6866183159906-01-06- Tight Waist Entry.mp4", title: "Tight Waist Entry", duration: "3:04" },
+                    { number: "1.7", file: "6866183159906-01-07- Bodylock Entry.mp4", title: "Bodylock Entry", duration: "5:33" },
+                    { number: "1.8", file: "6866183159906-01-08- Over_Under Entry.mp4", title: "Over/Under Entry", duration: "6:06" },
+                    { number: "1.9", file: "6866183159906-01-09- Underhook Entry.mp4", title: "Underhook Entry", duration: "3:15" },
+                ]
+            },
+            {
+                title: "Volume 2",
+                chapters: [
+                    { number: "2.1", file: "6866183159906-02-01- Getting To Chest To Chest Position - Clearing A Knee Shield.mp4", title: "Getting To Chest To Chest Position: Clearing A Knee Shield", duration: "12:22" },
+                    { number: "2.2", file: "6866183159906-02-02- Clearing A Knee Shield Part 2.mp4", title: "Clearing A Knee Shield Part 2", duration: "5:08" },
+                    { number: "2.3", file: "6866183159906-02-03- Clearing A High Knee Shield.mp4", title: "Clearing A High Knee Shield", duration: "3:12" },
+                    { number: "2.4", file: "6866183159906-02-04- Dealing With An Unbreakable Knee Shield.mp4", title: "Dealing With An Unbreakable Knee Shield", duration: "5:40" },
+                    { number: "2.5", file: "6866183159906-02-05- Keeping A Knee Shield Out After You'Ve Passed It.mp4", title: "Keeping A Knee Shield Out After You've Passed It", duration: "6:10" },
+                    { number: "2.6", file: "6866183159906-02-07- The 2 Key Knee Positions That Will Make You Successful From Half Guard Top.mp4", title: "The 2 Key Knee Positions That Will Make You Successful From Half Guard Top", duration: "6:27" },
+                ]
+            },
+            {
+                title: "Volume 3",
+                chapters: [
+                    { number: "3.1", file: "6866183159906-03-01- Winning The Upper Body Half Guard Battle_ Pinning The Head & Shoulders With Underhooks - 3 Directions Of Passing From Half Guard.mp4", title: "Winning The Upper Body Half Guard Battle: Pinning The Head & Shoulders With Underhooks", duration: "6:14" },
+                    { number: "3.2", file: "6866183159906-03-02- Passing With A Far Side Underhook.mp4", title: "Passing With A Far Side Underhook", duration: "7:54" },
+                    { number: "3.3", file: "6866183159906-03-03- Headblock Underhook.mp4", title: "Headblock Underhook", duration: "6:33" },
+                    { number: "3.4", file: "6866183159906-03-04- Nearside Underhook & Head Block.mp4", title: "Nearside Underhook & Head Block", duration: "5:52" },
+                    { number: "3.5", file: "6866183159906-03-05- Double Underhooks.mp4", title: "Double Underhooks", duration: "7:32" },
+                ]
+            },
+            {
+                title: "Volume 4",
+                chapters: [
+                    { number: "4.1", file: "6866183159906-04-01- Winning The Lower Body Battle_ Using Reverse Cross Face And Flattening The Far Hip - Getting To A Quasi Mount And Using It To Win The Upper Body Battle.mp4", title: "Winning The Lower Body Battle: Using Reverse Cross Face And Flattening The Far Hip", duration: "7:20" },
+                    { number: "4.2", file: "6866183159906-04-02- The Skill Of Leg Riding.mp4", title: "The Skill Of Leg Riding", duration: "6:58" },
+                    { number: "4.3", file: "6866183159906-04-03- Switching Crossface.mp4", title: "Switching Crossface", duration: "7:44" },
+                    { number: "4.4", file: "6866183159906-04-04- Using Your Opponent'S Defense To Pass His Guard.mp4", title: "Using Your Opponent's Defense To Pass His Guard", duration: "6:32" },
+                    { number: "4.5", file: "6866183159906-04-05- Tactical Insight For Older_Less Mobile Athletes_ Using Half Guard Top To Exhaust And Frustrate Younger And Fitter Opponents.mp4", title: "Tactical Insight For Older/Less Mobile Athletes: Using Half Guard Top To Exhaust And Frustrate Younger And Fitter Opponents", duration: "12:00" },
+                    { number: "4.6", file: "6866183159906-04-06- The Guard Passing Game Plan For Older_Mobility Compromised Athletes.mp4", title: "The Guard Passing Game Plan For Older/Mobility Compromised Athletes", duration: "8:42" },
+                    { number: "4.7", file: "6866183159906-04-07- Passing Half Butterfly Guard - Half Butterfly Guard Is A Different Problem From Passing Half Guard.mp4", title: "Passing Half Butterfly Guard", duration: "3:10" },
+                    { number: "4.8", file: "6866183159906-04-08- Nullifying A Half Butterfly Guard.mp4", title: "Nullifying A Half Butterfly Guard", duration: "6:49" },
+                    { number: "4.9", file: "6866183159906-04-09- Using Near Side Underhook Against Half Butterfly Guard.mp4", title: "Using Near Side Underhook Against Half Butterfly Guard", duration: "6:09" },
+                    { number: "4.10", file: "6866183159906-04-10- Footwork Makes The Move Work.mp4", title: "Footwork Makes The Move Work", duration: "7:09" },
+                ]
+            },
+            {
+                title: "Volume 5",
+                chapters: [
+                    { number: "5.1", file: "6866183159906-05-01- The Power Of Pinning For Older & Athletically Compromised Athletes - The Goal Of Pinning.mp4", title: "The Power Of Pinning For Older & Athletically Compromised Athletes", duration: "9:47" },
+                    { number: "5.2", file: "6866183159906-05-02- The Skills Of Pinning - Dynamic Pinning.mp4", title: "The Skills Of Pinning: Dynamic Pinning", duration: "6:58" },
+                    { number: "5.3", file: "6866183159906-05-03- The Most Important Side Pin Variations For Dynamic Pinning.mp4", title: "The Most Important Side Pin Variations For Dynamic Pinning", duration: "13:55" },
+                    { number: "5.4", file: "6866183159906-05-04- Moving To Other Forms Of Pin.mp4", title: "Moving To Other Forms Of Pin", duration: "30:01" },
+                    { number: "5.5", file: "6866183159906-05-05- Stabilizing The Mount.mp4", title: "Stabilizing The Mount", duration: "15:48" },
+                    { number: "5.6", file: "6866183159906-05-06- Stabilizing Rear Mount.mp4", title: "Stabilizing Rear Mount", duration: "15:42" },
+                    { number: "5.7", file: "6866183159906-05-07- Stabilizing Rear Mount Part 2.mp4", title: "Stabilizing Rear Mount Part 2", duration: "15:28" },
+                ]
+            },
+            {
+                title: "Volume 6",
+                chapters: [
+                    { number: "6.1", file: "6866183159906-06-01- Special Study_ American Lock - Reflections On The American Lock.mp4", title: "Special Study: American Lock - Reflections On The American Lock", duration: "9:10" },
+                    { number: "6.2", file: "6866183159906-06-02- The Advantages Of The American Lock.mp4", title: "The Advantages Of The American Lock", duration: "4:33" },
+                    { number: "6.3", file: "6866183159906-06-03- Mechanics Of A Strong American Lock.mp4", title: "Mechanics Of A Strong American Lock", duration: "20:48" },
+                    { number: "6.4", file: "6866183159906-06-04- Drilling The American Lock.mp4", title: "Drilling The American Lock", duration: "11:46" },
+                    { number: "6.5", file: "6866183159906-06-05- The American Lock From Mounted Position.mp4", title: "The American Lock From Mounted Position", duration: "10:43" },
+                ]
+            },
+            {
+                title: "Volume 7",
+                chapters: [
+                    { number: "7.1", file: "6866183159906-07-01- Special Study_ Kimura - Kimura Is The Perfect Lock For Older & Less Athletic Students.mp4", title: "Special Study: Kimura Is The Perfect Lock For Older & Less Athletic Students", duration: "8:05" },
+                    { number: "7.2", file: "6866183159906-07-02- Details Of Kimura.mp4", title: "Details Of Kimura", duration: "6:45" },
+                    { number: "7.3", file: "6866183159906-07-03- Rolling Through With Kimura.mp4", title: "Rolling Through With Kimura", duration: "4:27" },
+                    { number: "7.4", file: "6866183159906-07-04- Special Study_ North South Strangle - The North South Strangle For Older & Less Athletic Players.mp4", title: "Special Study: North South Strangle For Older & Less Athletic Players", duration: "3:38" },
+                    { number: "7.5", file: "6866183159906-07-05- Mechanics Of A North South Strangle.mp4", title: "Mechanics Of A North South Strangle", duration: "12:19" },
+                    { number: "7.6", file: "6866183159906-07-06- Adding A Detail That Is Difficult To See.mp4", title: "Adding A Detail That Is Difficult To See", duration: "4:21" },
+                    { number: "7.7", file: "6866183159906-07-07- Finishing With Two Hands.mp4", title: "Finishing With Two Hands", duration: "4:18" },
+                    { number: "7.8", file: "6866183159906-07-08- Troubleshooting The North South Strangle.mp4", title: "Troubleshooting The North South Strangle", duration: "12:29" },
+                    { number: "7.9", file: "6866183159906-07-09- The 3 Best Set Ups To The North South Strangle.mp4", title: "The 3 Best Set Ups To The North South Strangle", duration: "8:49" },
+                    { number: "7.10", file: "6866183159906-07-10- Eastwest Strangle.mp4", title: "Eastwest Strangle", duration: "6:14" },
+                ]
+            },
+            {
+                title: "Volume 8",
+                chapters: [
+                    { number: "8.1", file: "6866183159906-08-01- Special Study_ Katagatame - Mechanics Of Katagatame.mp4", title: "Special Study: Katagatame - Mechanics Of Katagatame", duration: "12:13" },
+                    { number: "8.2", file: "6866183159906-08-02- The Most Important Katagatame Setups For Older & Athletically Compromised Athletes.mp4", title: "The Most Important Katagatame Setups For Older & Athletically Compromised Athletes", duration: "25:50" },
+                    { number: "8.3", file: "6866183159906-08-03- A Simple Trick To Increase Your Effectiveness With Katagatame_ The Shoulder Drop.mp4", title: "A Simple Trick To Increase Your Effectiveness With Katagatame: The Shoulder Drop", duration: "4:56" },
+                    { number: "8.4", file: "6866183159906-08-04- Special Study_ Rear Strangles - Strangling From The Back With Your Arms For Older & Athletically Compromised Players.mp4", title: "Special Study: Rear Strangles - Strangling From The Back With Your Arms", duration: "20:51" },
+                    { number: "8.5", file: "6866183159906-08-05- The Relationship Between Upperbody Threat And Lower Body Threat For Rear Strangles.mp4", title: "The Relationship Between Upperbody Threat And Lower Body Threat For Rear Strangles", duration: "9:40" },
+                ]
+            },
+        ]
+    },
     "back-attacks": {
         title: "Enter The System: Back Attacks",
         instructor: "John Danaher",
