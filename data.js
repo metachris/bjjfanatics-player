@@ -496,4 +496,135 @@ const SERIES = {
             },
         ]
     },
+    "kimura": {
+        title: "Enter The System: Kimura",
+        instructor: "John Danaher",
+        folder: "kimura",
+        volumes: [
+            {
+                title: "Volume 1",
+                chapters: [
+                    { number: "1.1", file: "1841307222114-01-01-System Overview.mp4", title: "System Overview", duration: "15:48" },
+                    { number: "1.2", file: "1841307222114-01-02- Trinity Of Power.mp4", title: "Trinity Of Power", duration: "5:27" },
+                    { number: "1.3", file: "1841307222114-01-03- Thumb Or No Thumb.mp4", title: "Thumb Or No Thumb", duration: "5:04" },
+                    { number: "1.4", file: "1841307222114-01-04- Essential Nature Of Kimura _ A Twisting Lock.mp4", title: "Essential Nature Of Kimura: A Twisting Lock", duration: "4:04" },
+                    { number: "1.5", file: "1841307222114-01-05-Hand And Arm Positioning.mp4", title: "Hand And Arm Positioning", duration: "7:24" },
+                    { number: "1.6", file: "1841307222114-01-06- Bending A Straightened Arm.mp4", title: "Bending A Straightened Arm", duration: "5:34" },
+                    { number: "1.7", file: "1841307222114-01-07- Diagonol Power Line.mp4", title: "Diagonal Power Line", duration: "6:09" },
+                    { number: "1.8", file: "1841307222114-01-08- Pull Dominant Kimuras Vs Push Dominant Kimuras.mp4", title: "Pull Dominant Kimuras vs Push Dominant Kimuras", duration: "2:41" },
+                    { number: "1.9", file: "1841307222114-01-09-Beating The Shoulder And Trapping Head.mp4", title: "Beating The Shoulder And Trapping Head", duration: "4:24" },
+                    { number: "1.10", file: "1841307222114-01-10- Shoulder Line.mp4", title: "Shoulder Line", duration: "3:16" },
+                    { number: "1.11", file: "1841307222114-01-11- A Vexing Problem.mp4", title: "A Vexing Problem", duration: "4:16" },
+                    { number: "1.12", file: "1841307222114-01-12- Essential Skill Of Kimura System _ Roll Through Kimura Scrambles.mp4", title: "Essential Skill Of Kimura System: Roll Through Kimura Scrambles", duration: "7:47" },
+                ]
+            },
+            {
+                title: "Volume 2",
+                chapters: [
+                    { number: "2.1", file: "1841307222114-02-01- Introduction To Dorsal Kimura.mp4", title: "Introduction To Dorsal Kimura", duration: "7:53" },
+                    { number: "2.2", file: "1841307222114-02-02- Unlocking Reinforced Hands.mp4", title: "Unlocking Reinforced Hands", duration: "9:52" },
+                    { number: "2.3", file: "1841307222114-02-03-Using Legs For Kimura.mp4", title: "Using Legs For Kimura", duration: "16:19" },
+                    { number: "2.4", file: "1841307222114-02-04- Switching To Alternative Submission.mp4", title: "Switching To Alternative Submission", duration: "5:14" },
+                    { number: "2.5", file: "1841307222114-02-05- Switching To Different Position _ System.mp4", title: "Switching To Different Position/System", duration: "9:38" },
+                ]
+            },
+            {
+                title: "Volume 3",
+                chapters: [
+                    { number: "3.1", file: "1841307222114-03-01- Introduction To The Kimura.mp4", title: "Introduction To The Kimura", duration: "10:58" },
+                    { number: "3.2", file: "1841307222114-03-02- Top And Bottom Knee.mp4", title: "Top And Bottom Knee", duration: "3:17" },
+                    { number: "3.3", file: "1841307222114-03-03- Bottom Knee To Back.mp4", title: "Bottom Knee To Back", duration: "3:26" },
+                    { number: "3.4", file: "1841307222114-03-04- Bottom Knee To Rear Triangle.mp4", title: "Bottom Knee To Rear Triangle", duration: "2:20" },
+                    { number: "3.5", file: "1841307222114-03-05- Bottom Knee To Arm Bar.mp4", title: "Bottom Knee To Arm Bar", duration: "2:09" },
+                    { number: "3.6", file: "1841307222114-03-06- Bottom Knee To Side Triangle.mp4", title: "Bottom Knee To Side Triangle", duration: "2:12" },
+                    { number: "3.7", file: "1841307222114-03-07- Bottom Knee Penetration To Russian Arm.mp4", title: "Bottom Knee Penetration To Russian Arm", duration: "5:22" },
+                    { number: "3.8", file: "1841307222114-03-08- Bottom Knee Into Cross Ashi Garami.mp4", title: "Bottom Knee Into Cross Ashi Garami", duration: "3:06" },
+                    { number: "3.9", file: "1841307222114-03-09-Bottom Knee Losing Russian Arm.mp4", title: "Bottom Knee Losing Russian Arm", duration: "5:59" },
+                    { number: "3.10", file: "1841307222114-03-10- Top Knee Attacks.mp4", title: "Top Knee Attacks", duration: "7:16" },
+                    { number: "3.11", file: "1841307222114-03-11-Relationship Between Kimura And Bicep Slicer.mp4", title: "Relationship Between Kimura And Bicep Slicer", duration: "7:58" },
+                ]
+            },
+            {
+                title: "Volume 4",
+                chapters: [
+                    { number: "4.1", file: "1841307222114-04-01- Introduction To Applications.mp4", title: "Introduction To Applications", duration: "3:43" },
+                    { number: "4.2", file: "1841307222114-04-02- Side Kimura Applications.mp4", title: "Side Kimura Applications", duration: "9:36" },
+                    { number: "4.3", file: "1841307222114-04-03-Side Kimura Switching Elbows.mp4", title: "Side Kimura Switching Elbows", duration: "3:54" },
+                    { number: "4.4", file: "1841307222114-04-04- Side Kimura Supinated Grip.mp4", title: "Side Kimura Supinated Grip", duration: "3:50" },
+                    { number: "4.5", file: "1841307222114-04-05- Side Kimura Pronated Grip.mp4", title: "Side Kimura Pronated Grip", duration: "5:10" },
+                    { number: "4.6", file: "1841307222114-04-06-Half Guard Top.mp4", title: "Half Guard Top", duration: "7:56" },
+                    { number: "4.7", file: "1841307222114-04-07- Half Guard To T Kimura.mp4", title: "Half Guard To T Kimura", duration: "5:03" },
+                    { number: "4.8", file: "1841307222114-04-08- Half Guard Attacking Power Prop.mp4", title: "Half Guard Attacking Power Prop", duration: "4:59" },
+                    { number: "4.9", file: "1841307222114-04-09- Classroom Commentary 1.mp4", title: "Classroom Commentary 1", duration: "1:46" },
+                    { number: "4.10", file: "1841307222114-04-10- Classroom Commentary 2.mp4", title: "Classroom Commentary 2", duration: "3:49" },
+                    { number: "4.11", file: "1841307222114-04-11- Classroom Commentary 3.mp4", title: "Classroom Commentary 3", duration: "2:52" },
+                ]
+            },
+            {
+                title: "Volume 5",
+                chapters: [
+                    { number: "5.1", file: "1841307222114-05-01- Butterfly Guard.mp4", title: "Butterfly Guard", duration: "4:27" },
+                    { number: "5.2", file: "1841307222114-05-02- Kimura Vs Butterfly Guard Moving Head To Setup Kimura.mp4", title: "Kimura vs Butterfly Guard: Moving Head To Setup Kimura", duration: "3:23" },
+                    { number: "5.3", file: "1841307222114-05-03- Kimura Vs Butterfly Guard Standing.mp4", title: "Kimura vs Butterfly Guard Standing", duration: "3:34" },
+                    { number: "5.4", file: "1841307222114-05-04- Kimura Vs Butterfly Guard Standing Opposite Side.mp4", title: "Kimura vs Butterfly Guard Standing Opposite Side", duration: "4:42" },
+                    { number: "5.5", file: "1841307222114-05-05- Kimura Vs Butterfly Guard Working From Outside Position.mp4", title: "Kimura vs Butterfly Guard Working From Outside Position", duration: "3:28" },
+                    { number: "5.6", file: "1841307222114-05-06- Kimura.mp4", title: "Kimura", duration: "12:19" },
+                    { number: "5.7", file: "1841307222114-05-07- Turtle Position Olympic Bar To Kimura.mp4", title: "Turtle Position Olympic Bar To Kimura", duration: "3:46" },
+                    { number: "5.8", file: "1841307222114-05-08- Kimura Vs Turtle Side Triangle.mp4", title: "Kimura vs Turtle Side Triangle", duration: "3:47" },
+                    { number: "5.9", file: "1841307222114-05-09- Kimura Vs Single Leg On Mat.mp4", title: "Kimura vs Single Leg On Mat", duration: "8:32" },
+                    { number: "5.10", file: "1841307222114-05-10- Kimura Vs Single Leg On Mat Drill.mp4", title: "Kimura vs Single Leg On Mat Drill", duration: "7:47" },
+                    { number: "5.11", file: "1841307222114-05-11- Classroom Commentary 4.mp4", title: "Classroom Commentary 4", duration: "3:43" },
+                    { number: "5.12", file: "1841307222114-05-12- Classroom Commentary 5.mp4", title: "Classroom Commentary 5", duration: "3:15" },
+                ]
+            },
+            {
+                title: "Volume 6",
+                chapters: [
+                    { number: "6.1", file: "1841307222114-06-01- Kimura Vs Single Leg Countering The Peak Out.mp4", title: "Kimura vs Single Leg: Countering The Peak Out", duration: "4:59" },
+                    { number: "6.2", file: "1841307222114-06-02- Kesa-Gatame.mp4", title: "Kesa-Gatame", duration: "9:44" },
+                    { number: "6.3", file: "1841307222114-06-03- Closed Guard Kimura _ The Great Mystery Of Closed Guard Kimura.mp4", title: "Closed Guard Kimura: The Great Mystery Of Closed Guard Kimura", duration: "23:32" },
+                    { number: "6.4", file: "1841307222114-06-04- Kimura Closed Guard Wrist Control And Power Prop.mp4", title: "Kimura Closed Guard Wrist Control And Power Prop", duration: "8:05" },
+                    { number: "6.5", file: "1841307222114-06-05- Closed Guard Kimura Head Pass Setup.mp4", title: "Closed Guard Kimura Head Pass Setup", duration: "5:26" },
+                    { number: "6.6", file: "1841307222114-06-06- Kimura From Bottom Half Guard.mp4", title: "Kimura From Bottom Half Guard", duration: "10:19" },
+                    { number: "6.7", file: "1841307222114-06-07- Bottom Half Guard Kimura Converting To Full Guard.mp4", title: "Bottom Half Guard Kimura Converting To Full Guard", duration: "3:41" },
+                    { number: "6.8", file: "1841307222114-06-08- Half Guard Kimura Sumi Gaeshi Variations.mp4", title: "Half Guard Kimura Sumi Gaeshi Variations", duration: "3:22" },
+                    { number: "6.9", file: "1841307222114-06-09- Classroom Commentary 6.mp4", title: "Classroom Commentary 6", duration: "1:58" },
+                    { number: "6.10", file: "1841307222114-06-10- Classroom Commentary 7.mp4", title: "Classroom Commentary 7", duration: "1:33" },
+                ]
+            },
+            {
+                title: "Volume 7",
+                chapters: [
+                    { number: "7.1", file: "1841307222114-07-01- Bottom Half Guard To The Kimura.mp4", title: "Bottom Half Guard To The Kimura", duration: "6:21" },
+                    { number: "7.2", file: "1841307222114-07-02- Half Guard Kimura Vs Arm Bar.mp4", title: "Half Guard Kimura vs Arm Bar", duration: "8:23" },
+                    { number: "7.3", file: "1841307222114-07-03- Half Guard Kimura To Front Triangle.mp4", title: "Half Guard Kimura To Front Triangle", duration: "10:00" },
+                    { number: "7.4", file: "1841307222114-07-04- Kimura Bottom Turtle Position.mp4", title: "Kimura Bottom Turtle Position", duration: "6:48" },
+                    { number: "7.5", file: "1841307222114-07-05- Kimura Bottom Turtle Inside Arm Roll Staying Above The Hips.mp4", title: "Kimura Bottom Turtle Inside Arm Roll Staying Above The Hips", duration: "6:22" },
+                    { number: "7.6", file: "1841307222114-07-06- Kimura Bottom Turtle Inside Arm Roll To Kimura Finish.mp4", title: "Kimura Bottom Turtle Inside Arm Roll To Kimura Finish", duration: "2:39" },
+                    { number: "7.7", file: "1841307222114-07-07- Kimura Bottom Turtle Vs Seat Belt.mp4", title: "Kimura Bottom Turtle vs Seat Belt", duration: "4:34" },
+                    { number: "7.8", file: "1841307222114-07-08- Kimura Bottom Turtle Outside Arm Roll.mp4", title: "Kimura Bottom Turtle Outside Arm Roll", duration: "4:49" },
+                    { number: "7.9", file: "1841307222114-07-09- Kimura Bottom Turtle Outside Arm Variation.mp4", title: "Kimura Bottom Turtle Outside Arm Variation", duration: "5:25" },
+                    { number: "7.10", file: "1841307222114-07-10- Standing Position.mp4", title: "Standing Position", duration: "6:26" },
+                    { number: "7.11", file: "1841307222114-07-11- Kimura Vs Standing Single Leg Head Outside.mp4", title: "Kimura vs Standing Single Leg Head Outside", duration: "2:47" },
+                    { number: "7.12", file: "1841307222114-07-12- Kimura Vs Standing Single Moving The Head.mp4", title: "Kimura vs Standing Single Moving The Head", duration: "3:31" },
+                    { number: "7.13", file: "1841307222114-07-13- Kimura Vs Single Leg Kneeling Opponent.mp4", title: "Kimura vs Single Leg Kneeling Opponent", duration: "4:28" },
+                    { number: "7.14", file: "1841307222114-07-14- Kimura Vs Double Leg.mp4", title: "Kimura vs Double Leg", duration: "4:27" },
+                    { number: "7.15", file: "1841307222114-07-15- Kimura Vs Double Leg (Cont.).mp4", title: "Kimura vs Double Leg (Cont.)", duration: "2:02" },
+                    { number: "7.16", file: "1841307222114-07-16- Classroom Commentary 8.mp4", title: "Classroom Commentary 8", duration: "2:16" },
+                ]
+            },
+            {
+                title: "Volume 8",
+                chapters: [
+                    { number: "8.1", file: "1841307222114-08-01- Legs Kimura _ Reverse Omoplata.mp4", title: "Legs Kimura / Reverse Omoplata", duration: "14:29" },
+                    { number: "8.2", file: "1841307222114-08-02- Trimura.mp4", title: "Trimura", duration: "19:24" },
+                    { number: "8.3", file: "1841307222114-08-03- Multiple Kimuras.mp4", title: "Multiple Kimuras", duration: "11:21" },
+                    { number: "8.4", file: "1841307222114-08-04- Timing The Roll Through.mp4", title: "Timing The Roll Through", duration: "6:19" },
+                    { number: "8.5", file: "1841307222114-08-05- Elbow Wedge For Kimura.mp4", title: "Elbow Wedge For Kimura", duration: "2:49" },
+                    { number: "8.6", file: "1841307222114-08-06- Head And Arm Kimura.mp4", title: "Head And Arm Kimura", duration: "5:41" },
+                    { number: "8.7", file: "1841307222114-08-07- Classroom Commentary 9.mp4", title: "Classroom Commentary 9", duration: "5:36" },
+                ]
+            },
+        ]
+    },
 };
