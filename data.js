@@ -531,7 +531,7 @@ const SERIES = {
             {
                 title: "Volume 3",
                 chapters: [
-                    { number: "3.1", file: "1841307222114-03-01- Introduction To The Kimura.mp4", title: "Introduction To The Kimura", duration: "10:58" },
+                    { number: "3.1", file: "1841307222114-03-01- Introduction To The Kimura.mp4", title: "Introduction To The T Kimura", duration: "10:58" },
                     { number: "3.2", file: "1841307222114-03-02- Top And Bottom Knee.mp4", title: "Top And Bottom Knee", duration: "3:17" },
                     { number: "3.3", file: "1841307222114-03-03- Bottom Knee To Back.mp4", title: "Bottom Knee To Back", duration: "3:26" },
                     { number: "3.4", file: "1841307222114-03-04- Bottom Knee To Rear Triangle.mp4", title: "Bottom Knee To Rear Triangle", duration: "2:20" },
@@ -623,6 +623,121 @@ const SERIES = {
                     { number: "8.5", file: "1841307222114-08-05- Elbow Wedge For Kimura.mp4", title: "Elbow Wedge For Kimura", duration: "2:49" },
                     { number: "8.6", file: "1841307222114-08-06- Head And Arm Kimura.mp4", title: "Head And Arm Kimura", duration: "5:41" },
                     { number: "8.7", file: "1841307222114-08-07- Classroom Commentary 9.mp4", title: "Classroom Commentary 9", duration: "5:36" },
+                ]
+            },
+        ]
+    },
+    "craig-jones-power-bottom": {
+        title: "Power Bottom",
+        instructor: "Craig Jones",
+        folder: "craig-jones-power-bottom",
+        volumes: [
+            {
+                title: "Volume 1",
+                chapters: [
+                    { number: "1.1", file: "6628467703906-01-01-Introduction.mp4", title: "Introduction", duration: "3:37" },
+                    { number: "1.2", file: "6628467703906-01-02- Mexican Concepts & Principles - If You Can Get Up, Get Up.mp4", title: "Mexican Concepts & Principles: If You Can Get Up, Get Up", duration: "4:27" },
+                    { number: "1.3", file: "6628467703906-01-03- If You Can Shoot, Shoot.mp4", title: "If You Can Shoot, Shoot", duration: "2:27" },
+                    { number: "1.4", file: "6628467703906-01-04- If You Can Turtle, Turtle.mp4", title: "If You Can Turtle, Turtle", duration: "4:55" },
+                    { number: "1.5", file: "6628467703906-01-05- Always Seek Head & Hip Height.mp4", title: "Always Seek Head & Hip Height", duration: "3:47" },
+                    { number: "1.6", file: "6628467703906-01-06- Understanding The Ranges.mp4", title: "Understanding The Ranges", duration: "2:22" },
+                    { number: "1.7", file: "6628467703906-01-07- Long Range Guards - Understand Long Range Guards.mp4", title: "Long Range Guards: Understand Long Range Guards", duration: "4:13" },
+                    { number: "1.8", file: "6628467703906-01-08- Seated Shots_ Leg Configurations.mp4", title: "Seated Shots: Leg Configurations", duration: "3:38" },
+                    { number: "1.9", file: "6628467703906-01-09- Creating A High Head Thc Not Required.mp4", title: "Creating A High Head (THC Not Required)", duration: "6:22" },
+                    { number: "1.10", file: "6628467703906-01-10- Head In Center.mp4", title: "Head In Center", duration: "4:10" },
+                    { number: "1.11", file: "6628467703906-01-11- Lock Double.mp4", title: "Lock Double", duration: "5:21" },
+                    { number: "1.12", file: "6628467703906-01-12- Double To Ashi.mp4", title: "Double To Ashi", duration: "3:03" },
+                ]
+            },
+            {
+                title: "Volume 2",
+                chapters: [
+                    { number: "2.1", file: "6628467703906-02-01- Inside Knee Pull Trilemma_ - Introduction.mp4", title: "Inside Knee Pull Trilemma: Introduction", duration: "4:20" },
+                    { number: "2.2", file: "6628467703906-02-02- Single Leg.mp4", title: "Single Leg", duration: "5:53" },
+                    { number: "2.3", file: "6628467703906-02-03- Leg Attacks.mp4", title: "Leg Attacks", duration: "4:43" },
+                    { number: "2.4", file: "6628467703906-02-04- Rdlr.mp4", title: "RDLR", duration: "5:20" },
+                    { number: "2.5", file: "6628467703906-02-05- Arm Drag.mp4", title: "Arm Drag", duration: "3:07" },
+                    { number: "2.6", file: "6628467703906-02-06- Ankle Picking.mp4", title: "Ankle Picking", duration: "6:36" },
+                    { number: "2.7", file: "6628467703906-02-07- Hit Hip Pick.mp4", title: "Hit Hip Pick", duration: "2:37" },
+                    { number: "2.8", file: "6628467703906-02-08- Shoulder Roll Shot.mp4", title: "Shoulder Roll Shot", duration: "2:04" },
+                ]
+            },
+            {
+                title: "Volume 3",
+                chapters: [
+                    { number: "3.1", file: "6628467703906-03-01- Mid Range - Understanding Mid Range.mp4", title: "Mid Range: Understanding Mid Range", duration: "4:48" },
+                    { number: "3.2", file: "6628467703906-03-02- Shoulder Line.mp4", title: "Shoulder Line", duration: "2:10" },
+                    { number: "3.3", file: "6628467703906-03-03- Fundamental Heist.mp4", title: "Fundamental Heist", duration: "2:11" },
+                    { number: "3.4", file: "6628467703906-03-04- Heisting Into Cross Ashi.mp4", title: "Heisting Into Cross Ashi", duration: "8:05" },
+                    { number: "3.5", file: "6628467703906-03-05- Heisting Into Front Head.mp4", title: "Heisting Into Front Head", duration: "6:50" },
+                    { number: "3.6", file: "6628467703906-03-06- Putting The Gae In Sumi Gaeshi_ Dynamic Butterfly Sweeping.mp4", title: "Putting The Gae In Sumi Gaeshi: Dynamic Butterfly Sweeping", duration: "7:20" },
+                    { number: "3.7", file: "6628467703906-03-07- Mexican Karate Armdrag.mp4", title: "Mexican Karate Armdrag", duration: "4:40" },
+                    { number: "3.8", file: "6628467703906-03-08- Classic Elevations To Ashi Garami.mp4", title: "Classic Elevations To Ashi Garami", duration: "3:56" },
+                    { number: "3.9", file: "6628467703906-03-09- Mid Range Shot.mp4", title: "Mid Range Shot", duration: "2:32" },
+                ]
+            },
+            {
+                title: "Volume 4",
+                chapters: [
+                    { number: "4.1", file: "6628467703906-04-01- Reverse Z - Introduction To Reverse Z.mp4", title: "Reverse Z: Introduction To Reverse Z", duration: "9:15" },
+                    { number: "4.2", file: "6628467703906-04-02- Dealing With The Claw.mp4", title: "Dealing With The Claw", duration: "3:30" },
+                    { number: "4.3", file: "6628467703906-04-03- Heisting Up.mp4", title: "Heisting Up", duration: "3:53" },
+                    { number: "4.4", file: "6628467703906-04-04- Overhead Sweep.mp4", title: "Overhead Sweep", duration: "4:10" },
+                    { number: "4.5", file: "6628467703906-04-05- Overhead To The Legs.mp4", title: "Overhead To The Legs", duration: "2:33" },
+                    { number: "4.6", file: "6628467703906-04-06- Launch Him Vato!.mp4", title: "Launch Him Vato!", duration: "4:05" },
+                    { number: "4.7", file: "6628467703906-04-07- Submission Options.mp4", title: "Submission Options", duration: "8:18" },
+                    { number: "4.8", file: "6628467703906-04-08- Short Range - Understanding Short Range.mp4", title: "Short Range: Understanding Short Range", duration: "2:04" },
+                    { number: "4.9", file: "6628467703906-04-09- Knee Lever.mp4", title: "Knee Lever", duration: "5:03" },
+                    { number: "4.10", file: "6628467703906-04-10- Close Range Off Balance.mp4", title: "Close Range Off Balance", duration: "8:54" },
+                    { number: "4.11", file: "6628467703906-04-11- Luke Stewart Vs Andre Galvao.mp4", title: "Luke Stewart vs Andre Galvao", duration: "4:24" },
+                    { number: "4.12", file: "6628467703906-04-12- False Half Guard - Introduction To False Half Guard.mp4", title: "False Half Guard: Introduction To False Half Guard", duration: "4:40" },
+                    { number: "4.13", file: "6628467703906-04-13- Scoring The Underhook.mp4", title: "Scoring The Underhook", duration: "3:40" },
+                    { number: "4.14", file: "6628467703906-04-14- False Half Guard To Shelf.mp4", title: "False Half Guard To Shelf", duration: "4:18" },
+                    { number: "4.15", file: "6628467703906-04-15- Overwrap.mp4", title: "Overwrap", duration: "2:05" },
+                    { number: "4.16", file: "6628467703906-04-16- Zenga Roll.mp4", title: "Zenga Roll", duration: "2:39" },
+                ]
+            },
+            {
+                title: "Volume 5",
+                chapters: [
+                    { number: "5.1", file: "6628467703906-05-01- Turtle - Rethinking The Turtle.mp4", title: "Turtle: Rethinking The Turtle", duration: "6:49" },
+                    { number: "5.2", file: "6628467703906-05-02- Offensive Grips.mp4", title: "Offensive Grips", duration: "2:57" },
+                    { number: "5.3", file: "6628467703906-05-03- Vulnerabilities Of The Seatbelt.mp4", title: "Vulnerabilities Of The Seatbelt", duration: "4:10" },
+                    { number: "5.4", file: "6628467703906-05-04- The Fatman Roll.mp4", title: "The Fatman Roll", duration: "3:18" },
+                    { number: "5.5", file: "6628467703906-05-05- Overwrap Reversal.mp4", title: "Overwrap Reversal", duration: "5:06" },
+                    { number: "5.6", file: "6628467703906-05-06- Deep Overwrap Reversal.mp4", title: "Deep Overwrap Reversal", duration: "2:39" },
+                    { number: "5.7", file: "6628467703906-05-07- Quintet Kneebar.mp4", title: "Quintet Kneebar", duration: "4:40" },
+                    { number: "5.8", file: "6628467703906-05-08- Standing Up.mp4", title: "Standing Up", duration: "5:26" },
+                    { number: "5.9", file: "6628467703906-05-09- The Intimate Hook.mp4", title: "The Intimate Hook", duration: "3:55" },
+                    { number: "5.10", file: "6628467703906-05-10- Granby.mp4", title: "Granby", duration: "4:34" },
+                    { number: "5.11", file: "6628467703906-05-11- Addressing The Claw.mp4", title: "Addressing The Claw", duration: "3:08" },
+                    { number: "5.12", file: "6628467703906-05-12- Addressing A Single Hook.mp4", title: "Addressing A Single Hook", duration: "6:57" },
+                    { number: "5.13", file: "6628467703906-05-13- Frank Hickman Power Half.mp4", title: "Frank Hickman Power Half", duration: "2:48" },
+                    { number: "5.14", file: "6628467703906-05-14- Beating Seatbelts W_out Hooks.mp4", title: "Beating Seatbelts Without Hooks", duration: "4:48" },
+                    { number: "5.15", file: "6628467703906-05-15- Crucifix.mp4", title: "Crucifix", duration: "3:55" },
+                ]
+            },
+            {
+                title: "Volume 6",
+                chapters: [
+                    { number: "6.1", file: "6628467703906-06-01- Four Point - Introduction To 4 Point.mp4", title: "Four Point: Introduction To 4 Point", duration: "4:00" },
+                    { number: "6.2", file: "6628467703906-06-02- Shaking People Off.mp4", title: "Shaking People Off", duration: "3:39" },
+                    { number: "6.3", file: "6628467703906-06-03- Switching.mp4", title: "Switching", duration: "5:49" },
+                    { number: "6.4", file: "6628467703906-06-04- Fatman Switch.mp4", title: "Fatman Switch", duration: "3:01" },
+                    { number: "6.5", file: "6628467703906-06-05- Granby.mp4", title: "Granby", duration: "3:33" },
+                    { number: "6.6", file: "6628467703906-06-06- Overwrap From 4 Point Position.mp4", title: "Overwrap From 4 Point Position", duration: "2:24" },
+                    { number: "6.7", file: "6628467703906-06-07- Just Stand Up.mp4", title: "Just Stand Up", duration: "2:37" },
+                    { number: "6.8", file: "6628467703906-06-08- Rear Body Lock - Introduction.mp4", title: "Rear Body Lock: Introduction", duration: "6:33" },
+                    { number: "6.9", file: "6628467703906-06-09- Harai Goshi.mp4", title: "Harai Goshi", duration: "5:25" },
+                    { number: "6.10", file: "6628467703906-06-10- Geno Morelli.mp4", title: "Geno Morelli", duration: "2:55" },
+                    { number: "6.11", file: "6628467703906-06-11- Uchi Mata.mp4", title: "Uchi Mata", duration: "4:32" },
+                    { number: "6.12", file: "6628467703906-06-12- Uchi Mata Attacks.mp4", title: "Uchi Mata Attacks", duration: "5:21" },
+                    { number: "6.13", file: "6628467703906-06-13- Reverse Overback.mp4", title: "Reverse Overback", duration: "5:04" },
+                    { number: "6.14", file: "6628467703906-06-14- Roll To The Legs.mp4", title: "Roll To The Legs", duration: "3:26" },
+                    { number: "6.15", file: "6628467703906-06-15- Knee Block Kosoto.mp4", title: "Knee Block Kosoto", duration: "1:48" },
+                    { number: "6.16", file: "6628467703906-06-16- The Fellipe Andrew.mp4", title: "The Fellipe Andrew", duration: "2:49" },
+                    { number: "6.17", file: "6628467703906-06-17- Granby.mp4", title: "Granby", duration: "3:00" },
+                    { number: "6.18", file: "6628467703906-06-18- Hopping Hook Counter.mp4", title: "Hopping Hook Counter", duration: "3:44" },
                 ]
             },
         ]
