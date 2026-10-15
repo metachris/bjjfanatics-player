@@ -451,12 +451,14 @@
         let chapterIds = [];
         let currentIndex = -1;
 
-        Object.entries(SERIES).forEach(([key, series]) => {
-            const option = document.createElement('option');
-            option.value = key;
-            option.textContent = series.title;
-            seriesSelect.appendChild(option);
-        });
+        Object.entries(SERIES)
+            .sort((a, b) => a[1].title.localeCompare(b[1].title))
+            .forEach(([key, series]) => {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = series.title;
+                seriesSelect.appendChild(option);
+            });
 
         function getStorageKey(seriesKey) {
             return `bjj-${seriesKey}-last-chapter`;
