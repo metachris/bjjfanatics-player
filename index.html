@@ -538,7 +538,7 @@
             const initialIndex = requestedIndex >= 0
                 ? requestedIndex
                 : (saved >= 0 && saved < allChapters.length ? saved : 0);
-            playChapter(initialIndex, autoplay);
+            playChapter(initialIndex, autoplay, true);
         }
 
         function filterChapters() {
@@ -565,7 +565,7 @@
             searchInput.blur();
         });
 
-        function playChapter(index, autoplay = true) {
+        function playChapter(index, autoplay = true, restorePosition = false) {
             saveCurrentPosition();
 
             const ch = allChapters[index];
@@ -580,12 +580,14 @@
             videoSource.src = `${currentSeries.folder}/${encodeURIComponent(ch.file)}`;
             player.load();
 
-            const savedTime = parseFloat(localStorage.getItem(getPositionKey(currentSeriesKey, ch.number)));
-            if (savedTime > 0) {
-                player.addEventListener('loadedmetadata', function restore() {
-                    player.currentTime = savedTime;
-                    player.removeEventListener('loadedmetadata', restore);
-                });
+            if (restorePosition) {
+                const savedTime = parseFloat(localStorage.getItem(getPositionKey(currentSeriesKey, ch.number)));
+                if (savedTime > 0) {
+                    player.addEventListener('loadedmetadata', function restore() {
+                        player.currentTime = savedTime;
+                        player.removeEventListener('loadedmetadata', restore);
+                    });
+                }
             }
 
             if (autoplay) player.play();
