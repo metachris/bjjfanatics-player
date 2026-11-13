@@ -906,4 +906,97 @@ const SERIES = {
             },
         ]
     },
+    "beating-them-from-behind": {
+        title: "Neil Melanson - Beating Them From Behind",
+        instructor: "Neil Melanson",
+        folder: "Neil-Melanson_Beating-Them-From-Behind",
+        volumes: [
+            {
+                title: "Volume 1",
+                chapters: [
+                    { number: "1.1", file: "6941963812962-01-01-Intro.mp4", title: "Intro", duration: "4:15" },
+                    { number: "1.2", file: "6941963812962-01-02- Basic Upper Body Controls.mp4", title: "Basic Upper Body Controls", duration: "8:08" },
+                    { number: "1.3", file: "6941963812962-01-03- Rnc Basics.mp4", title: "RNC Basics", duration: "6:36" },
+                    { number: "1.4", file: "6941963812962-01-04- Gable Grip.mp4", title: "Gable Grip", duration: "5:08" },
+                    { number: "1.5", file: "6941963812962-01-05- One Handed Rnc.mp4", title: "One Handed RNC", duration: "5:06" },
+                    { number: "1.6", file: "6941963812962-01-06- Cross Face.mp4", title: "Cross Face", duration: "9:15" },
+                ]
+            },
+            {
+                title: "Volume 2",
+                chapters: [
+                    { number: "2.1", file: "6941963812962-02-01- The Exorcist.mp4", title: "The Exorcist", duration: "5:05" },
+                    { number: "2.2", file: "6941963812962-02-02- Putting Things Together.mp4", title: "Putting Things Together", duration: "4:48" },
+                    { number: "2.3", file: "6941963812962-02-03- Underhook High Vs Underhook Bottom.mp4", title: "Underhook High vs Underhook Bottom", duration: "4:31" },
+                    { number: "2.4", file: "6941963812962-02-04- Back Mount To Mount.mp4", title: "Back Mount To Mount", duration: "8:14" },
+                    { number: "2.5", file: "6941963812962-02-05- Back Mount To Mount Arm Triangle.mp4", title: "Back Mount To Mount Arm Triangle", duration: "7:42" },
+                ]
+            },
+            {
+                title: "Volume 3",
+                chapters: [
+                    { number: "3.1", file: "6941963812962-03-01- One Hook Crossface.mp4", title: "One Hook Crossface", duration: "7:18" },
+                    { number: "3.2", file: "6941963812962-03-02- Wrist Pin Behind The Back.mp4", title: "Wrist Pin Behind The Back", duration: "4:04" },
+                    { number: "3.3", file: "6941963812962-03-03- Hammerlock And Crossface Chicken Wing.mp4", title: "Hammerlock And Crossface Chicken Wing", duration: "4:43" },
+                    { number: "3.4", file: "6941963812962-03-04- Rnc, Shin Leverage.mp4", title: "RNC: Shin Leverage", duration: "3:23" },
+                    { number: "3.5", file: "6941963812962-03-05- Double Underhooks.mp4", title: "Double Underhooks", duration: "4:36" },
+                    { number: "3.6", file: "6941963812962-03-06- Arm Trap In The Crook Of The Knee.mp4", title: "Arm Trap In The Crook Of The Knee", duration: "1:55" },
+                ]
+            },
+            {
+                title: "Volume 4",
+                chapters: [
+                    { number: "4.1", file: "6941963812962-04-01- Butt Drag To Tuck Choke.mp4", title: "Butt Drag To Tuck Choke", duration: "16:50" },
+                    { number: "4.2", file: "6941963812962-04-02- Butt Drag To Arm Triangle.mp4", title: "Butt Drag To Arm Triangle", duration: "9:53" },
+                    { number: "4.3", file: "6941963812962-04-03- Butt Drag To Back Mount.mp4", title: "Butt Drag To Back Mount", duration: "8:26" },
+                    { number: "4.4", file: "6941963812962-04-04- One Hook Back Mount Transition To Pull Back Rear Naked Choke_Neck Crank.mp4", title: "One Hook Back Mount Transition To Pull Back Rear Naked Choke / Neck Crank", duration: "8:35" },
+                ]
+            },
+            {
+                title: "Volume 5",
+                chapters: [
+                    { number: "5.1", file: "6941963812962-05-01- Back Mount Scramble To Kimura.mp4", title: "Back Mount Scramble To Kimura", duration: "8:13" },
+                    { number: "5.2", file: "6941963812962-05-02- Arm Drag To The Back.mp4", title: "Arm Drag To The Back", duration: "2:55" },
+                    { number: "5.3", file: "6941963812962-05-03- Over The Back Grip Triangle.mp4", title: "Over The Back Grip Triangle", duration: "5:50" },
+                    { number: "5.4", file: "6941963812962-05-04- Body Lock Figure Four.mp4", title: "Body Lock Figure Four", duration: "7:43" },
+                    { number: "5.5", file: "6941963812962-05-05- Monkey Choke To Rear Naked Choke.mp4", title: "Monkey Choke To Rear Naked Choke", duration: "3:56" },
+                    { number: "5.6", file: "6941963812962-05-06- Inside Leg Lace.mp4", title: "Inside Leg Lace", duration: "8:35" },
+                    { number: "5.7", file: "6941963812962-05-07- Crossface From Inside Leg Lace.mp4", title: "Crossface From Inside Leg Lace", duration: "3:27" },
+                    { number: "5.8", file: "6941963812962-05-08- Inside Leg Lace Twister.mp4", title: "Inside Leg Lace Twister", duration: "6:26" },
+                ]
+            },
+            {
+                title: "Volume 6",
+                chapters: [
+                    { number: "6.1", file: "6941963812962-06-01- Reverse Armbar.mp4", title: "Reverse Armbar", duration: "3:27" },
+                    { number: "6.2", file: "6941963812962-06-02- Twister Part 2.mp4", title: "Twister Part 2", duration: "3:31" },
+                    { number: "6.3", file: "6941963812962-06-03- Armbar Kimura Sequence Off The Back.mp4", title: "Armbar Kimura Sequence Off The Back", duration: "18:24" },
+                    { number: "6.4", file: "6941963812962-06-04- Armbar Kimura 2.mp4", title: "Armbar Kimura 2", duration: "5:29" },
+                ]
+            },
+            {
+                title: "Volume 7",
+                chapters: [
+                    { number: "7.1", file: "6941963812962-07-01- Sankaku.mp4", title: "Sankaku", duration: "9:32" },
+                    { number: "7.2", file: "6941963812962-07-02- Armbar To Back Take Drill.mp4", title: "Armbar To Back Take Drill", duration: "12:38" },
+                    { number: "7.3", file: "6941963812962-07-03- Side Arm Triangle.mp4", title: "Side Arm Triangle", duration: "7:53" },
+                    { number: "7.4", file: "6941963812962-07-04- Figure Four Shoulder Lock From Inside Lace.mp4", title: "Figure Four Shoulder Lock From Inside Lace", duration: "7:01" },
+                ]
+            },
+            {
+                title: "Volume 8",
+                chapters: [
+                    { number: "8.1", file: "6941963812962-08-01- Wrist Lock Grip Break To Rear Naked Choke.mp4", title: "Wrist Lock Grip Break To Rear Naked Choke", duration: "4:42" },
+                    { number: "8.2", file: "6941963812962-08-02- Leg Hug Rear Naked.mp4", title: "Leg Hug Rear Naked", duration: "5:27" },
+                    { number: "8.3", file: "6941963812962-08-03- Wrist Feed Trap To Rear Naked Choke _ Crank.mp4", title: "Wrist Feed Trap To Rear Naked Choke / Crank", duration: "5:26" },
+                    { number: "8.4", file: "6941963812962-08-04- Wrist Feed To Armbar.mp4", title: "Wrist Feed To Armbar", duration: "4:05" },
+                    { number: "8.5", file: "6941963812962-08-05- Wrist Feed To Triangle.mp4", title: "Wrist Feed To Triangle", duration: "5:07" },
+                    { number: "8.6", file: "6941963812962-08-06- Leg Hook Arm Bar.mp4", title: "Leg Hook Arm Bar", duration: "2:43" },
+                    { number: "8.7", file: "6941963812962-08-07- Shoulder Pin Williams Guard Armbar From The Back.mp4", title: "Shoulder Pin Williams Guard Armbar From The Back", duration: "4:37" },
+                    { number: "8.8", file: "6941963812962-08-08- Shoulder Pin Williams Guard Reverse Triangle From The Back.mp4", title: "Shoulder Pin Williams Guard Reverse Triangle From The Back", duration: "5:23" },
+                    { number: "8.9", file: "6941963812962-08-09- Outro.mp4", title: "Outro", duration: "0:49" },
+                ]
+            },
+        ]
+    },
 };
