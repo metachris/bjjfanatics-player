@@ -742,4 +742,168 @@ const SERIES = {
             },
         ]
     },
+    "arm-triangle": {
+        title: "Neil Melanson - Arm Triangle",
+        instructor: "Neil Melanson",
+        folder: "Neil-Melanson_Arm-Triangle",
+        volumes: [
+            {
+                title: "Volume 1",
+                chapters: [
+                    { number: "1.1", file: "4482477457506-01-01- Intro Sponsor And Fundamentals.mp4", title: "Intro, Sponsor And Fundamentals", duration: "10:49" },
+                    { number: "1.2", file: "4482477457506-01-02- First Phase. Pressure Choke.mp4", title: "First Phase: Pressure Choke", duration: "12:51" },
+                    { number: "1.3", file: "4482477457506-01-03- Second Phase, Cut Across, Foot Position, Start The Choke Early.mp4", title: "Second Phase: Cut Across, Foot Position, Start The Choke Early", duration: "11:47" },
+                    { number: "1.4", file: "4482477457506-01-04- One Hand Concept.mp4", title: "One Hand Concept", duration: "6:32" },
+                    { number: "1.5", file: "4482477457506-01-05- Mount, Grapevine Set Ups.mp4", title: "Mount: Grapevine Set Ups", duration: "7:49" },
+                ]
+            },
+            {
+                title: "Volume 2",
+                chapters: [
+                    { number: "2.1", file: "4482477457506-02-01- Figure Four.mp4", title: "Figure Four", duration: "5:33" },
+                    { number: "2.2", file: "4482477457506-02-02- Chest Version.mp4", title: "Chest Version", duration: "4:44" },
+                    { number: "2.3", file: "4482477457506-02-03- Shoulder Lock From Kesa Gatame.mp4", title: "Shoulder Lock From Kesa Gatame", duration: "5:07" },
+                    { number: "2.4", file: "4482477457506-02-04- Basic Set Ups.mp4", title: "Basic Set Ups", duration: "19:09" },
+                    { number: "2.5", file: "4482477457506-02-05- Half Guard Downward Grip Options.mp4", title: "Half Guard Downward Grip Options", duration: "7:44" },
+                    { number: "2.6", file: "4482477457506-02-06- Full Guard Arm Triangle.mp4", title: "Full Guard Arm Triangle", duration: "4:23" },
+                    { number: "2.7", file: "4482477457506-02-07- Hammerlock.mp4", title: "Hammerlock", duration: "5:56" },
+                ]
+            },
+            {
+                title: "Volume 3",
+                chapters: [
+                    { number: "3.1", file: "4482477457506-03-01- Arm Triangle Finger Walk.mp4", title: "Arm Triangle Finger Walk", duration: "9:06" },
+                    { number: "3.2", file: "4482477457506-03-02- Wrist Lock_Top Wrist Lock.mp4", title: "Wrist Lock / Top Wrist Lock", duration: "5:04" },
+                    { number: "3.3", file: "4482477457506-03-03- North South.mp4", title: "North South", duration: "5:57" },
+                    { number: "3.4", file: "4482477457506-03-04- Turk_Tuck.mp4", title: "Turk/Tuck", duration: "5:06" },
+                    { number: "3.5", file: "4482477457506-03-05- Butcher Shop North South.mp4", title: "Butcher Shop North South", duration: "3:36" },
+                    { number: "3.6", file: "4482477457506-03-06- Reverse Dragon Sleeper.mp4", title: "Reverse Dragon Sleeper", duration: "4:01" },
+                    { number: "3.7", file: "4482477457506-03-07- North South Choke.mp4", title: "North South Choke", duration: "4:47" },
+                    { number: "3.8", file: "4482477457506-03-08- Pendulum To An Arm Triangle.mp4", title: "Pendulum To An Arm Triangle", duration: "3:29" },
+                    { number: "3.9", file: "4482477457506-03-09- Butterfly Sweep To Arm Triangle.mp4", title: "Butterfly Sweep To Arm Triangle", duration: "5:13" },
+                    { number: "3.10", file: "4482477457506-03-10- Half Guard Pass.mp4", title: "Half Guard Pass", duration: "5:11" },
+                    { number: "3.11", file: "4482477457506-03-11- Cradle.mp4", title: "Cradle", duration: "5:08" },
+                ]
+            },
+            {
+                title: "Volume 4",
+                chapters: [
+                    { number: "4.1", file: "4482477457506-04-01- Von Flue Choke.mp4", title: "Von Flue Choke", duration: "11:43" },
+                    { number: "4.2", file: "4482477457506-04-02- Headlock Tilt To Arm Triangle.mp4", title: "Headlock Tilt To Arm Triangle", duration: "6:10" },
+                    { number: "4.3", file: "4482477457506-04-03- Arm Triangle Drill.mp4", title: "Arm Triangle Drill", duration: "10:46" },
+                    { number: "4.4", file: "4482477457506-04-04- Arm Triangle To Kimura.mp4", title: "Arm Triangle To Kimura", duration: "12:19" },
+                    { number: "4.5", file: "4482477457506-04-05- Arm Triangle To Triangle.mp4", title: "Arm Triangle To Triangle", duration: "6:01" },
+                    { number: "4.6", file: "4482477457506-04-06- Arm Triangle From Bottom Half Guard.mp4", title: "Arm Triangle From Bottom Half Guard", duration: "5:50" },
+                    { number: "4.7", file: "4482477457506-04-07- Arm Triangle To Crucifix Arm Lock And Final Words.mp4", title: "Arm Triangle To Crucifix Arm Lock And Final Words", duration: "5:14" },
+                ]
+            },
+        ]
+    },
+    "tactical-turtle": {
+        title: "Neil Melanson - Tactical Turtle",
+        instructor: "Neil Melanson",
+        folder: "Neil-Melanson_Tactical-Turtle",
+        volumes: [
+            {
+                title: "Volume 1",
+                chapters: [
+                    { number: "1.1", file: "6543777628258-01-01-Introduction.mp4", title: "Introduction", duration: "2:05" },
+                    { number: "1.2", file: "6543777628258-01-02-Body Position Concepts.mp4", title: "Body Position Concepts", duration: "18:56" },
+                    { number: "1.3", file: "6543777628258-01-03-Clock Idea.mp4", title: "Clock Idea", duration: "5:24" },
+                    { number: "1.4", file: "6543777628258-01-04-Wrist Control Concepts.mp4", title: "Wrist Control Concepts", duration: "27:39" },
+                    { number: "1.5", file: "6543777628258-01-05-Counter Wizard Armdrag.mp4", title: "Counter Wizard Armdrag", duration: "9:40" },
+                    { number: "1.6", file: "6543777628258-01-06-Underhook Limp Armdrag(Add On).mp4", title: "Underhook Limp Armdrag (Add On)", duration: "3:30" },
+                ]
+            },
+            {
+                title: "Volume 2",
+                chapters: [
+                    { number: "2.1", file: "6543777628258-02-01- Sweep Single.mp4", title: "Sweep Single", duration: "17:39" },
+                    { number: "2.2", file: "6543777628258-02-02- Low Sweep Single Leg Near Side Shelf.mp4", title: "Low Sweep Single Leg Near Side Shelf", duration: "19:18" },
+                    { number: "2.3", file: "6543777628258-02-03- Ankle Shelf_turkey Choke.mp4", title: "Ankle Shelf / Turkey Choke", duration: "8:29" },
+                    { number: "2.4", file: "6543777628258-02-04- Far Side Shelf_hammer Lock.mp4", title: "Far Side Shelf / Hammer Lock", duration: "16:29" },
+                    { number: "2.5", file: "6543777628258-02-05- Ankle Grab Roll.mp4", title: "Ankle Grab Roll", duration: "6:31" },
+                ]
+            },
+            {
+                title: "Volume 3",
+                chapters: [
+                    { number: "3.1", file: "6543777628258-03-01- Head In Hole Single.mp4", title: "Head In Hole Single", duration: "13:38" },
+                    { number: "3.2", file: "6543777628258-03-02- Low Single.mp4", title: "Low Single", duration: "7:46" },
+                    { number: "3.3", file: "6543777628258-03-03- Ankle Pick Out The Back.mp4", title: "Ankle Pick Out The Back", duration: "5:31" },
+                    { number: "3.4", file: "6543777628258-03-04- Picking Ankles.mp4", title: "Picking Ankles", duration: "10:18" },
+                    { number: "3.5", file: "6543777628258-03-05- Underhook Snap Down_half Helch.mp4", title: "Underhook Snap Down / Half Nelson", duration: "20:58" },
+                    { number: "3.6", file: "6543777628258-03-06- Mount Guillotine.mp4", title: "Mount Guillotine", duration: "6:42" },
+                    { number: "3.7", file: "6543777628258-03-07- Underhook Armdrag.mp4", title: "Underhook Armdrag", duration: "2:31" },
+                ]
+            },
+            {
+                title: "Volume 4",
+                chapters: [
+                    { number: "4.1", file: "6543777628258-04-01- Front Choke Variation.mp4", title: "Front Choke Variation", duration: "7:14" },
+                    { number: "4.2", file: "6543777628258-04-02- Snap And Shoot.mp4", title: "Snap And Shoot", duration: "5:29" },
+                    { number: "4.3", file: "6543777628258-04-03- Circling To The Back.mp4", title: "Circling To The Back", duration: "2:28" },
+                    { number: "4.4", file: "6543777628258-04-04- 2 On 1.mp4", title: "2 On 1", duration: "3:12" },
+                    { number: "4.5", file: "6543777628258-04-05- 2 On 1 Armdrag.mp4", title: "2 On 1 Armdrag", duration: "4:12" },
+                    { number: "4.6", file: "6543777628258-04-06- Russian Kimura.mp4", title: "Russian Kimura", duration: "5:09" },
+                    { number: "4.7", file: "6543777628258-04-07- Power Grip Option 2.mp4", title: "Power Grip Option 2", duration: "8:30" },
+                    { number: "4.8", file: "6543777628258-04-08- Sucker Drag.mp4", title: "Sucker Drag", duration: "4:23" },
+                    { number: "4.9", file: "6543777628258-04-09- Anaconda Escape.mp4", title: "Anaconda Escape", duration: "6:10" },
+                    { number: "4.10", file: "6543777628258-04-10- Darce.mp4", title: "Darce", duration: "6:07" },
+                    { number: "4.11", file: "6543777628258-04-11- Counter The Arm In Guillotine With A Sweep.mp4", title: "Counter The Arm In Guillotine With A Sweep", duration: "5:46" },
+                    { number: "4.12", file: "6543777628258-04-12- Funky Cold Medina.mp4", title: "Funky Cold Medina", duration: "14:17" },
+                ]
+            },
+            {
+                title: "Volume 5",
+                chapters: [
+                    { number: "5.1", file: "6543777628258-05-01- Stand Up.mp4", title: "Stand Up", duration: "17:26" },
+                    { number: "5.2", file: "6543777628258-05-02- Turtle Escape To Back Mount.mp4", title: "Turtle Escape To Back Mount", duration: "18:43" },
+                    { number: "5.3", file: "6543777628258-05-03- Sit Out Escape.mp4", title: "Sit Out Escape", duration: "11:39" },
+                    { number: "5.4", file: "6543777628258-05-04- Switch.mp4", title: "Switch", duration: "6:45" },
+                    { number: "5.5", file: "6543777628258-05-05- Sit Out The Peak Out.mp4", title: "Sit Out The Peak Out", duration: "12:24" },
+                ]
+            },
+            {
+                title: "Volume 6",
+                chapters: [
+                    { number: "6.1", file: "6543777628258-06-01- Near Arm Roll Granby.mp4", title: "Near Arm Roll Granby", duration: "8:23" },
+                    { number: "6.2", file: "6543777628258-06-02- Near Arm Sweep.mp4", title: "Near Arm Sweep", duration: "12:34" },
+                    { number: "6.3", file: "6543777628258-06-03- Modified Sweep Single.mp4", title: "Modified Sweep Single", duration: "7:04" },
+                    { number: "6.4", file: "6543777628258-06-04- Knee Block Takedown.mp4", title: "Knee Block Takedown", duration: "5:56" },
+                    { number: "6.5", file: "6543777628258-06-05- Ankle Pick Reversal_hip Lock.mp4", title: "Ankle Pick Reversal / Hip Lock", duration: "8:16" },
+                    { number: "6.6", file: "6543777628258-06-06- Hobbler.mp4", title: "Hobbler", duration: "12:41" },
+                    { number: "6.7", file: "6543777628258-06-07- Peterson_ Far Arm Roll.mp4", title: "Peterson: Far Arm Roll", duration: "7:48" },
+                ]
+            },
+            {
+                title: "Volume 7",
+                chapters: [
+                    { number: "7.1", file: "6543777628258-07-01- Kimura.mp4", title: "Kimura", duration: "8:22" },
+                    { number: "7.2", file: "6543777628258-07-02- Kimura Sequence 2.mp4", title: "Kimura Sequence 2", duration: "7:26" },
+                    { number: "7.3", file: "6543777628258-07-03- Kimura Sequence 3.mp4", title: "Kimura Sequence 3", duration: "6:52" },
+                    { number: "7.4", file: "6543777628258-07-04- Kimura Sequence 4_sankaku.mp4", title: "Kimura Sequence 4: Sankaku", duration: "8:05" },
+                    { number: "7.5", file: "6543777628258-07-05- Kimura Sequence 5_ Sankaku.mp4", title: "Kimura Sequence 5: Sankaku", duration: "4:48" },
+                    { number: "7.6", file: "6543777628258-07-06- Rolling Knee Bar.mp4", title: "Rolling Knee Bar", duration: "15:52" },
+                    { number: "7.7", file: "6543777628258-07-07- Peele.mp4", title: "Peele", duration: "6:25" },
+                    { number: "7.8", file: "6543777628258-07-08- Crucifix.mp4", title: "Crucifix", duration: "8:57" },
+                ]
+            },
+            {
+                title: "Volume 8",
+                chapters: [
+                    { number: "8.1", file: "6543777628258-08-01- Shake Em Loose.mp4", title: "Shake Em Loose", duration: "4:41" },
+                    { number: "8.2", file: "6543777628258-08-02- 1 Hook Shelf.mp4", title: "1 Hook Shelf", duration: "13:15" },
+                    { number: "8.3", file: "6543777628258-08-03- 2 Hooks Even.mp4", title: "2 Hooks Even", duration: "9:19" },
+                    { number: "8.4", file: "6543777628258-08-04- 1 Deep 1 Shallow.mp4", title: "1 Deep 1 Shallow", duration: "5:23" },
+                    { number: "8.5", file: "6543777628258-08-05- Power Half.mp4", title: "Power Half", duration: "4:25" },
+                    { number: "8.6", file: "6543777628258-08-06- Power Half Roll.mp4", title: "Power Half Roll", duration: "3:44" },
+                    { number: "8.7", file: "6543777628258-08-07- Back Mount Escape.mp4", title: "Back Mount Escape", duration: "3:36" },
+                    { number: "8.8", file: "6543777628258-08-08- Back Mount Escape 2.mp4", title: "Back Mount Escape 2", duration: "8:59" },
+                    { number: "8.9", file: "6543777628258-08-09- Back Mount Escape 3.mp4", title: "Back Mount Escape 3", duration: "8:12" },
+                    { number: "8.10", file: "6543777628258-08-10- Outro.mp4", title: "Outro", duration: "3:02" },
+                ]
+            },
+        ]
+    },
 };
